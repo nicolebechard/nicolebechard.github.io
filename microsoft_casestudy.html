@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicole Bechard - Microsoft</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a2e;--slate:#4a4a6a;--mist:#f4f3f0;--cream:#faf9f7;--accent:#0078D4;--accent-light:#cce4f7;--accent-mid:#50a8e8;--rule:#e0ddd8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.75;}
+nav{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--rule);padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+nav .name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);}
+nav .links{display:flex;gap:2.5rem;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);}
+nav .links span{cursor:pointer;}
+nav .links span.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;}
+.back-link{padding:1.5rem 4rem 0;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;}
+.hero-band{background:var(--ink);color:white;padding:5rem 4rem 4rem;position:relative;overflow:hidden;margin-top:1.5rem;}
+.hero-band::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,120,212,0.2) 0%,transparent 70%);}
+.hero-band::after{content:'';position:absolute;bottom:-60px;left:20%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,120,212,0.08) 0%,transparent 70%);}
+.role-label{font-size:0.75rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:1rem;}
+.hero-band h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;line-height:1.2;max-width:700px;margin-bottom:1.5rem;}
+.hero-band h1 em{font-style:italic;color:var(--accent-light);}
+.meta-row{display:flex;gap:2rem;flex-wrap:wrap;font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.5);}
+.page-content{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem;}
+.section-block{margin-bottom:3.5rem;}
+.section-label{font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;margin-bottom:1.1rem;color:var(--ink);line-height:1.3;}
+p{color:var(--slate);font-weight:300;margin-bottom:1rem;}
+p:last-child{margin-bottom:0;}
+strong{color:var(--ink);font-weight:500;}
+hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
+.pull-quote{border-left:3px solid var(--accent);padding:1rem 1.5rem;margin:2rem 0;background:var(--mist);border-radius:0 4px 4px 0;}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--ink);margin:0;line-height:1.5;}
+.img-block{margin:2.5rem 0;}
+.img-block img{width:100%;border-radius:6px;box-shadow:0 8px 40px rgba(26,26,46,0.12);display:block;}
+.img-caption{margin-top:0.9rem;}
+.caption-title{font-size:0.78rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink);margin-bottom:0.25rem;}
+.img-caption p{font-size:0.87rem;margin-bottom:0;}
+.placeholder{width:100%;border-radius:6px;background:var(--mist);border:2px dashed var(--rule);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;text-align:center;margin:2.5rem 0;}
+.placeholder .ph-icon{font-size:2rem;margin-bottom:0.8rem;opacity:0.4;}
+.placeholder .ph-title{font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin-bottom:0.4rem;}
+.placeholder .ph-desc{font-size:0.82rem;font-weight:300;color:var(--slate);max-width:400px;line-height:1.5;}
+.placeholder.tall{min-height:320px;}
+.placeholder.medium{min-height:220px;}
+.themes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.theme-card{background:white;border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.5rem;}
+.theme-card .theme-num{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem;}
+.theme-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;}
+.theme-card p{font-size:0.85rem;margin-bottom:0;}
+.theme-card-full{background:white;border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.5rem;margin-bottom:1rem;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
+.ba-panel{border-radius:6px;padding:1.5rem;}
+.ba-panel.before{background:#fff5f5;border:1px solid #fecaca;}
+.ba-panel.after{background:#f0f9ff;border:1px solid var(--accent-light);}
+.ba-label{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem;}
+.ba-panel.before .ba-label{color:#c0392b;}
+.ba-panel.after .ba-label{color:var(--accent);}
+.ba-panel h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;margin-bottom:0.5rem;color:var(--ink);}
+.ba-panel p{font-size:0.85rem;margin-bottom:0;}
+.results-strip{background:var(--ink);border-radius:8px;padding:2.5rem;margin:2.5rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.result-item .number{font-family:'Playfair Display',serif;font-size:2rem;color:var(--accent-light);line-height:1;margin-bottom:0.4rem;}
+.result-item .label{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.4;}
+.footnote{font-size:0.8rem;color:var(--slate);font-style:italic;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="name">Nicole Bechard</div>
+  <div class="links"><span>About</span><span class="active">Portfolio</span><span>Writing</span><span>Contact</span></div>
+</nav>
+
+<div class="back-link">All Projects</div>
+
+<div class="hero-band">
+  <div class="role-label">Microsoft &middot; Prague, CZ &middot; 2022&ndash;2024</div>
+  <h1>Turning a feature factory into a <em>platform with a purpose</em></h1>
+  <div class="meta-row">
+    <span>Sr. Product Manager, Tech for Social Impact</span>
+    <span>&middot;</span>
+    <span>Nonprofit CRM &amp; AI Platform</span>
+    <span>&middot;</span>
+    <span>Cross-functional teams across design, engineering &amp; data science</span>
+  </div>
+</div>
+
+<div class="page-content">
+
+  <!-- SITUATION -->
+  <div class="section-block">
+    <div class="section-label">The Situation</div>
+    <h2>A motivated team with no strategic thread</h2>
+    <p>Microsoft&rsquo;s Tech for Social Impact division had an inspirational vision to become the preferred platform for nonprofits of any size, anywhere in the world. It was well-funded, growing, and drawing serious partner interest. But when I joined, the product team was in a familiar and uncomfortable place.</p>
+    <p>The roadmap was a sprawling list of features designed to serve every possible nonprofit persona, fundraisers, marketers, grant writers, program managers, and gift processors. The team was shipping steadily, but no one could clearly articulate why they were building what they were building. The connective tissue between the work and the strategy simply wasn&rsquo;t there.</p>
+    <p>Underneath that, there was a more structural problem. The CRM at the heart of the platform had been acquired rather than built, a sound early decision to get to market quickly that also introduced real rigidity into the system. Customers faced long, complex implementations. And some of the most critical product decisions were drifting in directions that I wasn&rsquo;t convinced served our customers well.</p>
+
+    <div class="img-block">
+      <img src="msft_vision.png" alt="Microsoft Cloud for Nonprofit vision diagram">
+      <div class="img-caption">
+        <div class="caption-title">Microsoft Cloud for Nonprofit: Platform Vision</div>
+        <p>The division&rsquo;s six capability areas organized around the central mission of knowing donors and supporters, accelerating mission outcomes, and delivering effective programming. This was the strategic context I was building toward.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PAYMENTS -->
+  <div class="section-block">
+    <div class="section-label">The Fight Worth Having</div>
+    <h2>Reversing a decision that would have abandoned our customers</h2>
+    <p>The most consequential thing I did at Microsoft wasn&rsquo;t on the roadmap when I arrived. It was a decision I had to reverse.</p>
+    <p>My predecessor and director had landed on a strategy to cut payments functionality from the product altogether, offloading the complexity to third-party providers and letting implementation partners carry the burden. On paper it made sense. Payments is hard, messy, and not obviously a competitive differentiator.</p>
+    <p>But something felt wrong to me, so I did the research. I talked to customers and partners. I studied the market. Two things became undeniable: recurring monthly donations are the financial lifeblood of most nonprofits especially in the global fundraising market. Forcing an organization to migrate payment providers and reauthorize their entire donor base is not a minor inconvenience, it&rsquo;s an organizational crisis that disrupts revenue streams. Second, implementation partners needed the flexibility to build complex, automated donation processing workflows and integrations for their specific markets.</p>
+    <p>Cutting payments wouldn&rsquo;t just be a product decision. It would be turning our back on the people we were supposed to serve.</p>
+
+    <div class="before-after">
+      <div class="ba-panel before">
+        <div class="ba-label">Previous Direction</div>
+        <h3>Cut payments, shift burden to partners</h3>
+        <p>Offload all payment processing to third-party providers. Partners and customers absorb migration complexity. Recurring donor relationships at risk.</p>
+      </div>
+      <div class="ba-panel after">
+        <div class="ba-label">Nicole&rsquo;s Proposal</div>
+        <h3>Extensible payments platform</h3>
+        <p>Open API architecture enabling any payment provider integration. Partners build bespoke workflows using templates. Customers keep existing providers and donor relationships intact.</p>
+      </div>
+    </div>
+
+    <div class="placeholder tall">
+      <div class="ph-icon">&#9881;</div>
+      <div class="ph-title">Payments Architecture Diagram</div>
+      <div class="ph-desc">Coming soon, Miro diagram showing the before/after architecture: rigid single-provider system vs. extensible API layer enabling any payment provider and partner-built workflows.</div>
+    </div>
+
+    <p>I made the case internally. I worked with engineers, architects, and designers to develop a new extensible architecture, one that allowed customers to integrate their existing payment provider&rsquo;s API directly, eliminating the need to migrate donors while giving partners a flexible foundation to build bespoke workflows. The design created clear integration points for any financial technology that might emerge in the future.</p>
+    <p>The pitch wasn&rsquo;t immediately popular. It contradicted an already-decided strategy and required significant rearchitecture investment. But I came prepared with a concrete architecture plan, a clear partner success story, and a reimagined roadmap tied to measurable outcomes. Leadership came around.</p>
+
+    <div class="pull-quote">
+      <p>The rearchitecture never shipped in its full form, a major divisional restructuring eliminated most of the team before we crossed the finish line. But the architecture we designed became the foundation for the partner-led application model that followed. The extensibility strategy enabled partners to continue what we built.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ROADMAP -->
+  <div class="section-block">
+    <div class="section-label">The Strategic Shift</div>
+    <h2>From feature list to outcomes-based roadmap</h2>
+    <p>In parallel, I set out to rebuild the product roadmap from first principles. The existing approach organized everything by product line, fundraising features here, marketing features there, with the implicit goal of matching competitors feature-for-feature ahead of RFP cycles. Each list was well considered, but it was hard to imagine when the product gaps would be closed, for our customers and the team alike.</p>
+    <p>I replaced it with a theme-based, outcomes-driven roadmap built around five core ambitions for our customers. Each theme was connected to long-term outcome metrics, I defined high-level success measures for each and worked closely with fellow product managers to help them translate that thinking into measurable targets for their own initiatives.</p>
+
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-num">Theme 01</div>
+        <h3>Payments Extensibility</h3>
+        <p>Customers process donations through any payment provider with minimal build-out</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">Theme 02</div>
+        <h3>Reliability &amp; Maintainability</h3>
+        <p>Customers trust the system is always up and know how to upgrade</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">Theme 03</div>
+        <h3>Actionable Data</h3>
+        <p>Fundraisers receive donor intelligence that is useful and timely</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">Theme 04</div>
+        <h3>Security &amp; Compliance</h3>
+        <p>Platform meets all international security and compliance needs in a changing world</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">Theme 05</div>
+        <h3>Interoperability</h3>
+        <p>Customers use their nonprofit tools seamlessly alongside the rest of the Microsoft ecosystem</p>
+      </div>
+    </div>
+
+    <div class="placeholder tall">
+      <div class="ph-icon">&#128203;</div>
+      <div class="ph-title">Outcomes-Based Roadmap</div>
+      <div class="ph-desc">Coming soon, Miro visualization of the full roadmap: five themes across rows, time horizon across columns (Now / Next / Later), with initiatives mapped underneath each theme and outcome metrics at the header of each row.</div>
+    </div>
+
+    <p>The new roadmap did double duty. Internally it reorganized how engineering pods were structured and how we reported progress to divisional leadership. Externally the themes gave prospects and existing customers a coherent picture of where the platform was heading, framing our vision beyond just fundraising features.</p>
+    <p>Driving this change required patience and political judgment. My director initially wanted to present the roadmap in the familiar feature-silo format to senior leadership, so I gave her that view first. Then in every subsequent conversation I talked about outcomes. I let the new framing take hold through example rather than mandate. Eventually the outcomes-based language became how the whole team operated.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LEADERSHIP -->
+  <div class="section-block">
+    <div class="section-label">Team Leadership</div>
+    <h2>Coaching the team to think in outcomes</h2>
+    <p>Changing the roadmap was only half the work. My fellow product managers struggled to define how they could measure their own initiatives and tie them to the aspirational outcomes. I coached them through it, providing high-level metrics for each long-term outcome and working with them to define measurable targets for their specific initiatives.</p>
+    <p>This went all the way down to design. My designer and I established a clear metric and threshold that determined when a design was considered validated by user testing, removing ambiguity from a part of the process that is often treated as subjective. By putting a stake in the ground on what we really wanted to enable for customers, it became easier for the whole team to apply that kind of thinking to their own work.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RESULTS -->
+  <div class="section-block">
+    <div class="section-label">Impact</div>
+    <div class="results-strip">
+      <div class="result-item">
+        <div class="number">160%</div>
+        <div class="label">MAU growth against a 150% OKR target, driven by international expansion and customer onboarding</div>
+      </div>
+      <div class="result-item">
+        <div class="number">5 themes</div>
+        <div class="label">Outcomes-based roadmap adopted as the organizing framework for engineering, leadership reporting, and customer communication</div>
+      </div>
+      <div class="result-item">
+        <div class="number">Platform lives on</div>
+        <div class="label">Extensible payments architecture became the foundation for the partner-led model that outlasted the original team</div>
+      </div>
+    </div>
+    <p class="footnote">Microsoft&rsquo;s Tech for Social Impact division was restructured into a broader Microsoft Philanthropies organization in late 2024.</p>
+  </div>
+
+</div>
+</body>
+</html>

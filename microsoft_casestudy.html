@@ -71,7 +71,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
   <div class="links"><span>About</span><span class="active">Portfolio</span><span>Writing</span><span>Contact</span></div>
 </nav>
 
-<a href="index.html" class="back-link">← All Projects</a>
+<div class="back-link">All Projects</div>
 
 <div class="hero-band">
   <div class="role-label">Microsoft &middot; Prague, CZ &middot; 2022&ndash;2024</div>
@@ -96,7 +96,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
     <p>Underneath that, there was a more structural problem. The CRM at the heart of the platform had been acquired rather than built, a sound early decision to get to market quickly that also introduced real rigidity into the system. Customers faced long, complex implementations. And some of the most critical product decisions were drifting in directions that I wasn&rsquo;t convinced served our customers well.</p>
 
     <div class="img-block">
-      <img src="msft_vision.png" alt="Microsoft Cloud for Nonprofit vision diagram">
+      <img src="Msft_vision_dark.jpg" alt="Microsoft Cloud for Nonprofit vision diagram" style="width:100%;border-radius:8px;display:block;">
       <div class="img-caption">
         <div class="caption-title">Microsoft Cloud for Nonprofit: Platform Vision</div>
         <p>The division&rsquo;s six capability areas organized around the central mission of knowing donors and supporters, accelerating mission outcomes, and delivering effective programming. This was the strategic context I was building toward.</p>
@@ -126,12 +126,6 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
         <h3>Extensible payments platform</h3>
         <p>Open API architecture enabling any payment provider integration. Partners build bespoke workflows using templates. Customers keep existing providers and donor relationships intact.</p>
       </div>
-    </div>
-
-    <div class="placeholder tall">
-      <div class="ph-icon">&#9881;</div>
-      <div class="ph-title">Payments Architecture Diagram</div>
-      <div class="ph-desc">Coming soon, Miro diagram showing the before/after architecture: rigid single-provider system vs. extensible API layer enabling any payment provider and partner-built workflows.</div>
     </div>
 
     <p>I made the case internally. I worked with engineers, architects, and designers to develop a new extensible architecture, one that allowed customers to integrate their existing payment provider&rsquo;s API directly, eliminating the need to migrate donors while giving partners a flexible foundation to build bespoke workflows. The design created clear integration points for any financial technology that might emerge in the future.</p>
@@ -179,11 +173,12 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
       </div>
     </div>
 
-    <div class="placeholder tall">
-      <div class="ph-icon">&#128203;</div>
-      <div class="ph-title">Outcomes-Based Roadmap</div>
-      <div class="ph-desc">Coming soon, Miro visualization of the full roadmap: five themes across rows, time horizon across columns (Now / Next / Later), with initiatives mapped underneath each theme and outcome metrics at the header of each row.</div>
-    </div>
+    <iframe
+  src="msft_roadmap.html"
+  style="width:100%;height:620px;border:none;border-radius:8px;display:block;margin:32px 0;"
+  scrolling="no"
+  title="Outcomes-Based Roadmap">
+      </iframe>
 
     <p>The new roadmap did double duty. Internally it reorganized how engineering pods were structured and how we reported progress to divisional leadership. Externally the themes gave prospects and existing customers a coherent picture of where the platform was heading, framing our vision beyond just fundraising features.</p>
     <p>Driving this change required patience and political judgment. My director initially wanted to present the roadmap in the familiar feature-silo format to senior leadership, so I gave her that view first. Then in every subsequent conversation I talked about outcomes. I let the new framing take hold through example rather than mandate. Eventually the outcomes-based language became how the whole team operated.</p>

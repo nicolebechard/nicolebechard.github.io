@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outcomes-Based Roadmap — Microsoft Tech for Social Impact</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --msft-blue: #0078D4;
+    --msft-blue-dark: #005a9e;
+    --msft-blue-light: #e8f3fb;
+    --col-now: #f0f7f0;
+    --col-now-border: #4caf82;
+    --col-next: #fdf6ec;
+    --col-next-border: #e8a44a;
+    --col-later: #f5f0fa;
+    --col-later-border: #9b72cf;
+    --ink: #1a1a2e;
+    --ink-mid: #444460;
+    --ink-light: #888899;
+    --rule: #e0e0ec;
+    --row1: #fff8f0;
+    --row2: #f0f8ff;
+    --row3: #f0fff8;
+    --row4: #fff0f5;
+    --row5: #f5f0ff;
+    --row1-accent: #e86b2c;
+    --row2-accent: #0078D4;
+    --row3-accent: #2eaa72;
+    --row4-accent: #c0392b;
+    --row5-accent: #7c3aed;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f7f7f9;
+    color: var(--ink);
+    padding: 40px 24px 60px;
+    min-height: 100vh;
+  }
+
+  .wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--msft-blue);
+    border-radius: 12px 12px 0 0;
+    padding: 28px 36px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .header-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+  }
+
+  .header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.3;
+    max-width: 680px;
+  }
+
+  .header-title em {
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* COLUMN HEADERS */
+  .col-headers {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    gap: 0;
+    background: #fff;
+    border-left: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+  }
+
+  .col-header-theme {
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    border-right: 1px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .col-header {
+    padding: 14px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--rule);
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .col-header.now-header   { background: #edfaf3; border-bottom: 3px solid var(--col-now-border); }
+  .col-header.next-header  { background: #fef8ed; border-bottom: 3px solid var(--col-next-border); }
+  .col-header.later-header { background: #f3effe; border-bottom: 3px solid var(--col-later-border); }
+
+  .col-header:last-child { border-right: none; }
+
+  .col-sublabel { color: var(--ink-light); }
+
+  .col-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  .col-label.now   { color: var(--col-now-border); }
+  .col-label.next  { color: var(--col-next-border); }
+  .col-label.later { color: var(--col-later-border); }
+
+  .col-sublabel {
+    font-size: 10px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* GRID */
+  .grid {
+    border: 1px solid var(--rule);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .row:last-child { border-bottom: none; }
+
+  /* THEME CELL */
+  .theme-cell {
+    padding: 20px 20px 20px 24px;
+    border-right: 1px solid var(--rule);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .theme-accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+  }
+
+  .theme-num {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 5px;
+  }
+
+  .theme-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .theme-outcome {
+    font-size: 11px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .theme-metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,0,0,0.04);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    line-height: 1.4;
+  }
+
+  .metric-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* INITIATIVE CELLS */
+  .initiative-cell {
+    padding: 20px 18px;
+    border-right: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .initiative-cell:last-child { border-right: none; }
+
+  /* row-level rules handle cell backgrounds */
+
+
+
+
+  /* pills removed */
+
+  .initiative-item {
+    font-size: 12.5px;
+    color: var(--ink);
+    line-height: 1.5;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-weight: 400;
+  }
+
+  .initiative-item:last-child { border-bottom: none; }
+
+  .empty-label {
+    font-size: 11px;
+    color: var(--ink-light);
+    font-style: italic;
+    padding-top: 4px;
+  }
+
+  /* ROW COLORS -- theme tint fades Now (strong) -> Next (medium) -> Later (light) */
+  .row-1 .theme-cell { background: var(--row1); }
+  .row-1 .theme-accent-bar { background: var(--row1-accent); }
+  .row-1 .metric-dot { background: var(--row1-accent); }
+  .row-1 .initiative-cell.now   { background: color-mix(in srgb, var(--row1) 70%, white 30%); }
+  .row-1 .initiative-cell.next  { background: color-mix(in srgb, var(--row1) 40%, white 60%); }
+  .row-1 .initiative-cell.later { background: color-mix(in srgb, var(--row1) 15%, white 85%); }
+  .row-1 .initiative-cell.empty { background: color-mix(in srgb, var(--row1) 10%, white 90%); }
+
+  .row-2 .theme-cell { background: var(--row2); }
+  .row-2 .theme-accent-bar { background: var(--row2-accent); }
+  .row-2 .metric-dot { background: var(--row2-accent); }
+  .row-2 .initiative-cell.now   { background: color-mix(in srgb, var(--row2) 70%, white 30%); }
+  .row-2 .initiative-cell.next  { background: color-mix(in srgb, var(--row2) 40%, white 60%); }
+  .row-2 .initiative-cell.later { background: color-mix(in srgb, var(--row2) 15%, white 85%); }
+  .row-2 .initiative-cell.empty { background: color-mix(in srgb, var(--row2) 10%, white 90%); }
+
+  .row-3 .theme-cell { background: var(--row3); }
+  .row-3 .theme-accent-bar { background: var(--row3-accent); }
+  .row-3 .metric-dot { background: var(--row3-accent); }
+  .row-3 .initiative-cell.now   { background: color-mix(in srgb, var(--row3) 70%, white 30%); }
+  .row-3 .initiative-cell.next  { background: color-mix(in srgb, var(--row3) 40%, white 60%); }
+  .row-3 .initiative-cell.later { background: color-mix(in srgb, var(--row3) 15%, white 85%); }
+  .row-3 .initiative-cell.empty { background: color-mix(in srgb, var(--row3) 10%, white 90%); }
+
+  .row-4 .theme-cell { background: var(--row4); }
+  .row-4 .theme-accent-bar { background: var(--row4-accent); }
+  .row-4 .metric-dot { background: var(--row4-accent); }
+  .row-4 .initiative-cell.now   { background: color-mix(in srgb, var(--row4) 70%, white 30%); }
+  .row-4 .initiative-cell.next  { background: color-mix(in srgb, var(--row4) 40%, white 60%); }
+  .row-4 .initiative-cell.later { background: color-mix(in srgb, var(--row4) 15%, white 85%); }
+  .row-4 .initiative-cell.empty { background: color-mix(in srgb, var(--row4) 10%, white 90%); }
+
+  .row-5 .theme-cell { background: var(--row5); }
+  .row-5 .theme-accent-bar { background: var(--row5-accent); }
+  .row-5 .metric-dot { background: var(--row5-accent); }
+  .row-5 .initiative-cell.now   { background: color-mix(in srgb, var(--row5) 70%, white 30%); }
+  .row-5 .initiative-cell.next  { background: color-mix(in srgb, var(--row5) 40%, white 60%); }
+  .row-5 .initiative-cell.later { background: color-mix(in srgb, var(--row5) 15%, white 85%); }
+  .row-5 .initiative-cell.empty { background: color-mix(in srgb, var(--row5) 10%, white 90%); }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--ink-light);
+    text-align: center;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-eyebrow">Microsoft Tech for Social Impact · 2022–2024</div>
+    <div class="header-title">Become the <em>preferred platform</em> for partners building nonprofit solutions worldwide</div>
+  </div>
+
+  <div class="col-headers">
+    <div class="col-header-theme">Theme &amp; Outcome</div>
+    <div class="col-header now-header">
+      <span class="col-label now">Now</span>
+      <span class="col-sublabel">Active investment</span>
+    </div>
+    <div class="col-header next-header">
+      <span class="col-label next">Next</span>
+      <span class="col-sublabel">Committed &amp; sequenced</span>
+    </div>
+    <div class="col-header later-header">
+      <span class="col-label later">Later</span>
+      <span class="col-sublabel">Strategic horizon</span>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ROW 1: Payments Extensibility -->
+    <div class="row row-1">
+      <div class="theme-cell">
+        <div class="theme-accent-bar"></div>
+        <div class="theme-num">Theme 01</div>
+        <div class="theme-name">Payments Extensibility</div>
+        <div class="theme-outcome">Customers process donations through any payment provider with minimal build-out</div>
+        <div class="theme-metric">
+          <span class="metric-dot"></span>
+          Metric: Total implementation time
+        </div>
+      </div>
+      <div class="initiative-cell now">
+        <div class="initiative-item">Payment provider API endpoints</div>
+        <div class="initiative-item">Data model updates</div>
+      </div>
+      <div class="initiative-cell next">
+        <div class="initiative-item">Customizable payment workflows</div>
+        <div class="initiative-item">Plugin template library</div>
+      </div>
+      <div class="initiative-cell later">
+        <div class="initiative-item">Configurable alerts system</div>
+      </div>
+    </div>
+
+    <!-- ROW 2: Reliability & Maintainability -->
+    <div class="row row-2">
+      <div class="theme-cell">
+        <div class="theme-accent-bar"></div>
+        <div class="theme-num">Theme 02</div>
+        <div class="theme-name">Reliability &amp; Maintainability</div>
+        <div class="theme-outcome">Customers trust the system is always up and know how to upgrade</div>
+        <div class="theme-metric">
+          <span class="metric-dot"></span>
+          Metric: Uptime &amp; % upgrading within target window
+        </div>
+      </div>
+      <div class="initiative-cell now">
+        <div class="initiative-item">Managed solution layer</div>
+      </div>
+      <div class="initiative-cell next">
+        <div class="initiative-item">Partner landing zone</div>
+        <div class="initiative-item">Technical guides</div>
+      </div>
+      <div class="initiative-cell empty">
+        <span class="empty-label">No initiative planned</span>
+      </div>
+    </div>
+
+    <!-- ROW 3: Actionable Data -->
+    <div class="row row-3">
+      <div class="theme-cell">
+        <div class="theme-accent-bar"></div>
+        <div class="theme-num">Theme 03</div>
+        <div class="theme-name">Actionable Data</div>
+        <div class="theme-outcome">Fundraisers receive donor intelligence that is useful and timely</div>
+        <div class="theme-metric">
+          <span class="metric-dot"></span>
+          Metric: Users taking actions using the intelligence
+        </div>
+      </div>
+      <div class="initiative-cell now">
+        <div class="initiative-item">Donor likelihood to give scoring</div>
+      </div>
+      <div class="initiative-cell next">
+        <div class="initiative-item">Sustainer conversion modeling</div>
+      </div>
+      <div class="initiative-cell later">
+        <div class="initiative-item">Automated prospect profiles</div>
+        <div class="initiative-item">Lapsed donor prediction</div>
+      </div>
+    </div>
+
+    <!-- ROW 4: Security & Compliance -->
+    <div class="row row-4">
+      <div class="theme-cell">
+        <div class="theme-accent-bar"></div>
+        <div class="theme-num">Theme 04</div>
+        <div class="theme-name">Security &amp; Compliance</div>
+        <div class="theme-outcome">Platform meets all international security and compliance needs in a changing world</div>
+        <div class="theme-metric">
+          <span class="metric-dot"></span>
+          Metric: % of target markets where platform is compliant and available
+        </div>
+      </div>
+      <div class="initiative-cell now">
+        <div class="initiative-item">Localization</div>
+        <div class="initiative-item">Mandatory compliance upgrades</div>
+      </div>
+      <div class="initiative-cell next">
+        <div class="initiative-item">Automated testing improvements</div>
+      </div>
+      <div class="initiative-cell empty">
+        <span class="empty-label">No initiative planned</span>
+      </div>
+    </div>
+
+    <!-- ROW 5: Interoperability -->
+    <div class="row row-5">
+      <div class="theme-cell">
+        <div class="theme-accent-bar"></div>
+        <div class="theme-num">Theme 05</div>
+        <div class="theme-name">Interoperability</div>
+        <div class="theme-outcome">Customers use nonprofit tools seamlessly alongside the Microsoft ecosystem</div>
+        <div class="theme-metric">
+          <span class="metric-dot"></span>
+          Metric: % of customers adding extensions and integrations
+        </div>
+      </div>
+      <div class="initiative-cell now">
+        <div class="initiative-item">Customizable batch processing</div>
+      </div>
+      <div class="initiative-cell next">
+        <div class="initiative-item">Online payments integration</div>
+      </div>
+      <div class="initiative-cell later">
+        <div class="initiative-item">Partner Development Kit MVP</div>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+
+  <div class="footer">Roadmap reflects strategic direction as of 2022–2024. Initiative-level details are illustrative.</div>
+
+</div>
+</body>
+</html>

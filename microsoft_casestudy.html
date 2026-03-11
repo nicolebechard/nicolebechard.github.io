@@ -145,37 +145,9 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
     <p>In parallel, I set out to rebuild the product roadmap from first principles. The existing approach organized everything by product line, fundraising features here, marketing features there, with the implicit goal of matching competitors feature-for-feature ahead of RFP cycles. Each list was well considered, but it was hard to imagine when the product gaps would be closed, for our customers and the team alike.</p>
     <p>I replaced it with a theme-based, outcomes-driven roadmap built around five core ambitions for our customers. Each theme was connected to long-term outcome metrics, I defined high-level success measures for each and worked closely with fellow product managers to help them translate that thinking into measurable targets for their own initiatives.</p>
 
-    <div class="themes-grid">
-      <div class="theme-card">
-        <div class="theme-num">Theme 01</div>
-        <h3>Payments Extensibility</h3>
-        <p>Customers process donations through any payment provider with minimal build-out</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-num">Theme 02</div>
-        <h3>Reliability &amp; Maintainability</h3>
-        <p>Customers trust the system is always up and know how to upgrade</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-num">Theme 03</div>
-        <h3>Actionable Data</h3>
-        <p>Fundraisers receive donor intelligence that is useful and timely</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-num">Theme 04</div>
-        <h3>Security &amp; Compliance</h3>
-        <p>Platform meets all international security and compliance needs in a changing world</p>
-      </div>
-      <div class="theme-card">
-        <div class="theme-num">Theme 05</div>
-        <h3>Interoperability</h3>
-        <p>Customers use their nonprofit tools seamlessly alongside the rest of the Microsoft ecosystem</p>
-      </div>
-    </div>
-
     <iframe
   src="msft_roadmap.html"
-  style="width:100%;height:620px;border:none;border-radius:8px;display:block;margin:32px 0;"
+  style="width:100%;height:800px;border:none;border-radius:8px;display:block;margin:32px 0;"
   scrolling="no"
   title="Outcomes-Based Roadmap">
       </iframe>
@@ -217,5 +189,16 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
   </div>
 
 </div>
+
+<script>
+  window.addEventListener('message', function(e) {
+    if (e.origin !== 'https://nicolebechard.github.io') return;
+    if (e.data && e.data.iframeHeight) {
+      var iframe = document.querySelector('iframe[title="Outcomes-Based Roadmap"]');
+      if (iframe) iframe.style.height = e.data.iframeHeight + 'px';
+    }
+  });
+</script>
+
 </body>
 </html>

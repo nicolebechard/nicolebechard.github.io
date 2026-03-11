@@ -114,16 +114,16 @@
     padding: 14px 20px;
     text-align: center;
     border-bottom: 2px solid var(--rule);
-    border-right: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid var(--rule);
   }
 
-  .col-header.now-header   { background: #edfaf3; border-bottom: 3px solid var(--col-now-border); }
-  .col-header.next-header  { background: #fef8ed; border-bottom: 3px solid var(--col-next-border); }
-  .col-header.later-header { background: #f3effe; border-bottom: 3px solid var(--col-later-border); }
+  .col-header.now-header   { background: #f2f2f5; border-bottom: 3px solid var(--col-now-border); }
+  .col-header.next-header  { background: #f2f2f5; border-bottom: 3px solid var(--col-next-border); }
+  .col-header.later-header { background: #f2f2f5; border-bottom: 3px solid var(--col-later-border); }
 
   .col-header:last-child { border-right: none; }
 
-  .col-sublabel { color: var(--ink-light); }
+  .col-sublabel { color: inherit; font-weight: 500; }
 
   .col-label {
     font-size: 13px;
@@ -138,7 +138,6 @@
 
   .col-sublabel {
     font-size: 10px;
-    color: rgba(255,255,255,0.75);
     margin-top: 2px;
     display: block;
   }
@@ -261,42 +260,42 @@
   .row-1 .theme-cell { background: var(--row1); }
   .row-1 .theme-accent-bar { background: var(--row1-accent); }
   .row-1 .metric-dot { background: var(--row1-accent); }
-  .row-1 .initiative-cell.now   { background: color-mix(in srgb, var(--row1) 70%, white 30%); }
-  .row-1 .initiative-cell.next  { background: color-mix(in srgb, var(--row1) 40%, white 60%); }
-  .row-1 .initiative-cell.later { background: color-mix(in srgb, var(--row1) 15%, white 85%); }
-  .row-1 .initiative-cell.empty { background: color-mix(in srgb, var(--row1) 10%, white 90%); }
+  .row-1 .initiative-cell.now   { background: color-mix(in srgb, var(--row1) 95%, white 5%); }
+  .row-1 .initiative-cell.next  { background: color-mix(in srgb, var(--row1) 65%, white 35%); }
+  .row-1 .initiative-cell.later { background: color-mix(in srgb, var(--row1) 40%, white 60%); }
+  .row-1 .initiative-cell.empty { background: color-mix(in srgb, var(--row1) 35%, white 65%); }
 
   .row-2 .theme-cell { background: var(--row2); }
   .row-2 .theme-accent-bar { background: var(--row2-accent); }
   .row-2 .metric-dot { background: var(--row2-accent); }
-  .row-2 .initiative-cell.now   { background: color-mix(in srgb, var(--row2) 70%, white 30%); }
-  .row-2 .initiative-cell.next  { background: color-mix(in srgb, var(--row2) 40%, white 60%); }
-  .row-2 .initiative-cell.later { background: color-mix(in srgb, var(--row2) 15%, white 85%); }
-  .row-2 .initiative-cell.empty { background: color-mix(in srgb, var(--row2) 10%, white 90%); }
+  .row-2 .initiative-cell.now   { background: color-mix(in srgb, var(--row2) 95%, white 5%); }
+  .row-2 .initiative-cell.next  { background: color-mix(in srgb, var(--row2) 65%, white 35%); }
+  .row-2 .initiative-cell.later { background: color-mix(in srgb, var(--row2) 40%, white 60%); }
+  .row-2 .initiative-cell.empty { background: color-mix(in srgb, var(--row2) 35%, white 65%); }
 
   .row-3 .theme-cell { background: var(--row3); }
   .row-3 .theme-accent-bar { background: var(--row3-accent); }
   .row-3 .metric-dot { background: var(--row3-accent); }
-  .row-3 .initiative-cell.now   { background: color-mix(in srgb, var(--row3) 70%, white 30%); }
-  .row-3 .initiative-cell.next  { background: color-mix(in srgb, var(--row3) 40%, white 60%); }
-  .row-3 .initiative-cell.later { background: color-mix(in srgb, var(--row3) 15%, white 85%); }
-  .row-3 .initiative-cell.empty { background: color-mix(in srgb, var(--row3) 10%, white 90%); }
+  .row-3 .initiative-cell.now   { background: color-mix(in srgb, var(--row3) 95%, white 5%); }
+  .row-3 .initiative-cell.next  { background: color-mix(in srgb, var(--row3) 65%, white 35%); }
+  .row-3 .initiative-cell.later { background: color-mix(in srgb, var(--row3) 40%, white 60%); }
+  .row-3 .initiative-cell.empty { background: color-mix(in srgb, var(--row3) 35%, white 65%); }
 
   .row-4 .theme-cell { background: var(--row4); }
   .row-4 .theme-accent-bar { background: var(--row4-accent); }
   .row-4 .metric-dot { background: var(--row4-accent); }
-  .row-4 .initiative-cell.now   { background: color-mix(in srgb, var(--row4) 70%, white 30%); }
-  .row-4 .initiative-cell.next  { background: color-mix(in srgb, var(--row4) 40%, white 60%); }
-  .row-4 .initiative-cell.later { background: color-mix(in srgb, var(--row4) 15%, white 85%); }
-  .row-4 .initiative-cell.empty { background: color-mix(in srgb, var(--row4) 10%, white 90%); }
+  .row-4 .initiative-cell.now   { background: color-mix(in srgb, var(--row4) 95%, white 5%); }
+  .row-4 .initiative-cell.next  { background: color-mix(in srgb, var(--row4) 65%, white 35%); }
+  .row-4 .initiative-cell.later { background: color-mix(in srgb, var(--row4) 40%, white 60%); }
+  .row-4 .initiative-cell.empty { background: color-mix(in srgb, var(--row4) 35%, white 65%); }
 
   .row-5 .theme-cell { background: var(--row5); }
   .row-5 .theme-accent-bar { background: var(--row5-accent); }
   .row-5 .metric-dot { background: var(--row5-accent); }
-  .row-5 .initiative-cell.now   { background: color-mix(in srgb, var(--row5) 70%, white 30%); }
-  .row-5 .initiative-cell.next  { background: color-mix(in srgb, var(--row5) 40%, white 60%); }
-  .row-5 .initiative-cell.later { background: color-mix(in srgb, var(--row5) 15%, white 85%); }
-  .row-5 .initiative-cell.empty { background: color-mix(in srgb, var(--row5) 10%, white 90%); }
+  .row-5 .initiative-cell.now   { background: color-mix(in srgb, var(--row5) 95%, white 5%); }
+  .row-5 .initiative-cell.next  { background: color-mix(in srgb, var(--row5) 65%, white 35%); }
+  .row-5 .initiative-cell.later { background: color-mix(in srgb, var(--row5) 40%, white 60%); }
+  .row-5 .initiative-cell.empty { background: color-mix(in srgb, var(--row5) 35%, white 65%); }
 
   /* FOOTER */
   .footer {
@@ -459,5 +458,15 @@
   <div class="footer">Roadmap reflects strategic direction as of 2022–2024. Initiative-level details are illustrative.</div>
 
 </div>
+<script>
+  function sendHeight() {
+    window.parent.postMessage(
+      { iframeHeight: document.body.scrollHeight },
+      'https://nicolebechard.github.io'
+    );
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+</script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+
+  <!-- Decorative radial blobs (matching hero sections) -->
+  <defs>
+    <radialGradient id="blob1" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#2a6b7c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#2a6b7c" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="980" cy="120" rx="320" ry="320" fill="url(#blob1)"/>
+  <ellipse cx="200" cy="540" rx="240" ry="240" fill="url(#blob2)"/>
+
+  <!-- Teal accent bar -->
+  <rect x="80" y="80" width="3" height="80" fill="#2a6b7c" rx="2"/>
+
+  <!-- Label -->
+  <text x="100" y="118" font-family="Georgia, serif" font-size="15" font-weight="400" fill="#2a6b7c" letter-spacing="3">PORTFOLIO</text>
+
+  <!-- Name -->
+  <text x="80" y="310" font-family="Georgia, serif" font-size="96" font-weight="600" fill="#faf9f7">Nicole Bechard</text>
+
+  <!-- Title -->
+  <text x="84" y="370" font-family="Georgia, sans-serif" font-size="28" font-weight="300" fill="#8888aa" letter-spacing="1">Product Manager</text>
+
+  <!-- Divider rule -->
+  <rect x="80" y="410" width="120" height="1" fill="#2a6b7c" opacity="0.6"/>
+
+  <!-- URL -->
+  <text x="80" y="445" font-family="Georgia, sans-serif" font-size="18" font-weight="300" fill="#4a4a6a" letter-spacing="0.5">nicolebechard.github.io</text>
+
+</svg>

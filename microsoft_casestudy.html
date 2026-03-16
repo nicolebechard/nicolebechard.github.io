@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="How I turned a nonprofit CRM feature factory into an outcomes-driven platform, reversing a critical payments decision and driving a 160% increase in monthly active users.">
+<meta property="og:title" content="Microsoft Tech for Social Impact | Nicole Bechard">
+<meta property="og:description" content="How I turned a nonprofit CRM feature factory into an outcomes-driven platform, reversing a critical payments decision and driving a 160% increase in monthly active users.">
+<meta property="og:image" content="https://nicolebechard.github.io/og-image.png">
+<meta property="og:url" content="https://nicolebechard.github.io/microsoft_casestudy.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Microsoft Tech for Social Impact | Nicole Bechard">
+<meta name="twitter:description" content="How I turned a nonprofit CRM feature factory into an outcomes-driven platform, reversing a critical payments decision and driving a 160% increase in monthly active users.">
+<meta name="twitter:image" content="https://nicolebechard.github.io/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicole Bechard - Microsoft</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -12,8 +23,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);f
 nav{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--rule);padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;}
 nav .name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);}
 nav .links{display:flex;gap:2.5rem;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);}
-nav .links span{cursor:pointer;}
-nav .links span.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;}
+nav .links a{text-decoration:none;color:inherit;}
+nav .links a.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;}
 .back-link{padding:1.5rem 4rem 0;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s;}.back-link:hover{color:var(--ink);}
 .hero-band{background:var(--ink);color:white;padding:5rem 4rem 4rem;position:relative;overflow:hidden;margin-top:1.5rem;}
 .hero-band::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,120,212,0.2) 0%,transparent 70%);}
@@ -37,18 +48,18 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
 .img-caption{margin-top:0.9rem;}
 .caption-title{font-size:0.78rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink);margin-bottom:0.25rem;}
 .img-caption p{font-size:0.87rem;margin-bottom:0;}
-.placeholder{width:100%;border-radius:6px;background:var(--mist);border:2px dashed var(--rule);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;text-align:center;margin:2.5rem 0;}
-.placeholder .ph-icon{font-size:2rem;margin-bottom:0.8rem;opacity:0.4;}
-.placeholder .ph-title{font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin-bottom:0.4rem;}
-.placeholder .ph-desc{font-size:0.82rem;font-weight:300;color:var(--slate);max-width:400px;line-height:1.5;}
-.placeholder.tall{min-height:320px;}
-.placeholder.medium{min-height:220px;}
+
+
+
+
+
+
 .themes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
-.theme-card{background:white;border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.5rem;}
-.theme-card .theme-num{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem;}
-.theme-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;}
-.theme-card p{font-size:0.85rem;margin-bottom:0;}
-.theme-card-full{background:white;border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.5rem;margin-bottom:1rem;}
+
+
+
+
+
 .before-after{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
 .ba-panel{border-radius:6px;padding:1.5rem;}
 .ba-panel.before{background:#fff5f5;border:1px solid #fecaca;}
@@ -62,13 +73,52 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
 .result-item .number{font-family:'Playfair Display',serif;font-size:2rem;color:var(--accent-light);line-height:1;margin-bottom:0.4rem;}
 .result-item .label{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.4;}
 .footnote{font-size:0.8rem;color:var(--slate);font-style:italic;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);}
+
+@media (max-width: 640px) {
+  nav { padding: 1rem 1.5rem; }
+  .back-link { padding: 1.2rem 1.5rem 0; }
+  .hero-band { padding: 3rem 1.5rem 2.5rem; }
+  .page-content { padding: 2.5rem 1.5rem 4rem; }
+  .results-strip { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+  .before-after { grid-template-columns: 1fr; }
+  .themes-grid { grid-template-columns: 1fr; }
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.8rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.77rem; color: var(--slate); font-weight: 300;
+}
+footer .footer-links { display: flex; gap: 2rem; }
+footer a { color: var(--slate); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--ink); }
+@media (max-width: 640px) {
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+  footer .footer-links { gap: 1.5rem; }
+}
+
+/* HERO OUTCOME LINE */
+.hero-outcome {
+  margin-top: 0.9rem;
+  font-size: 0.8rem; font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.02em;
+}
+.hero-outcome-label {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-light);
+  margin-right: 0.5rem;
+}
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html#about" class="name" style="text-decoration:none;">Nicole Bechard</a>
-  <div class="links"><a href="index.html#about" style="text-decoration:none;color:inherit;">About</a><a href="index.html" style="text-decoration:none;color:inherit;" class="active">Portfolio</a><a href="#" onclick="return false;" style="opacity:0.45;cursor:default;text-decoration:none;color:inherit;">Writing</a><a href="mailto:nicole.bechard@gmail.com" style="text-decoration:none;color:inherit;">Contact</a></div>
+  <div class="links"><a href="index.html#about" style="text-decoration:none;color:inherit;">About</a><a href="index.html#work" style="text-decoration:none;color:inherit;" class="active">Portfolio</a><a href="#" onclick="return false;" style="opacity:0.45;cursor:default;text-decoration:none;color:inherit;">Writing</a><a href="contact.html" style="text-decoration:none;color:inherit;">Contact</a></div>
 </nav>
 
 <a href="index.html" class="back-link" style="text-decoration:none;">&#8592; All Projects</a>
@@ -83,7 +133,9 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
     <span>&middot;</span>
     <span>Cross-functional teams across design, engineering &amp; data science</span>
   </div>
+  <div class="hero-outcome"><span class="hero-outcome-label">Outcome</span>Outcomes-based roadmap, extensible payments architecture, 160% MAU growth</div>
 </div>
+
 
 <div class="page-content">
 
@@ -108,12 +160,12 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
 
   <!-- PAYMENTS -->
   <div class="section-block">
-    <div class="section-label">The Fight Worth Having</div>
+    <div class="section-label">Strategic Decision: Payments Architecture</div>
     <h2>Reversing a decision that would have abandoned our customers</h2>
-    <p>The most consequential thing I did at Microsoft wasn&rsquo;t on the roadmap when I arrived. It was a decision I had to reverse.</p>
-    <p>My predecessor and director had landed on a strategy to cut payments functionality from the product altogether, offloading the complexity to third-party providers and letting implementation partners carry the burden. On paper it made sense. Payments is hard, messy, and not obviously a competitive differentiator.</p>
-    <p>But something felt wrong to me, so I did the research. I talked to customers and partners. I studied the market. Two things became undeniable: recurring monthly donations are the financial lifeblood of most nonprofits especially in the global fundraising market. Forcing an organization to migrate payment providers and reauthorize their entire donor base is not a minor inconvenience, it&rsquo;s an organizational crisis that disrupts revenue streams. Second, implementation partners needed the flexibility to build complex, automated donation processing workflows and integrations for their specific markets.</p>
-    <p>Cutting payments wouldn&rsquo;t just be a product decision. It would be turning our back on the people we were supposed to serve.</p>
+    <p>One of the most consequential initiatives I led at Microsoft wasn&rsquo;t on the roadmap when I arrived. It was a decision I had to reverse.</p>
+    <p>My predecessor and director had landed on a strategy to cut payments functionality from the product altogether, offloading the complexity to third-party providers and letting implementation partners carry the burden. On paper it made sense. Payment integrations are resource-intensive, difficult to maintain, and not obviously a competitive differentiator.</p>
+    <p>But something felt wrong to me, so I did the research. I talked to customers and partners. I studied the market. Two major findings emerged: recurring monthly donations are the financial lifeblood of most nonprofits especially in the global fundraising market. Forcing an organization to migrate payment providers and reauthorize their entire donor base is not a minor inconvenience, it&rsquo;s an organizational crisis that disrupts revenue streams. Second, implementation partners needed the flexibility to build complex, automated donation processing workflows and integrations for their specific markets.</p>
+    <p>Cutting payments wouldn&rsquo;t just be a product decision. It would have created serious risks for our customers.</p>
 
     <div class="before-after">
       <div class="ba-panel before">
@@ -129,7 +181,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
     </div>
 
     <p>I made the case internally. I worked with engineers, architects, and designers to develop a new extensible architecture, one that allowed customers to integrate their existing payment provider&rsquo;s API directly, eliminating the need to migrate donors while giving partners a flexible foundation to build bespoke workflows. The design created clear integration points for any financial technology that might emerge in the future.</p>
-    <p>The pitch wasn&rsquo;t immediately popular. It contradicted an already-decided strategy and required significant rearchitecture investment. But I came prepared with a concrete architecture plan, a clear partner success story, and a reimagined roadmap tied to measurable outcomes. Leadership came around.</p>
+    <p>The pitch wasn&rsquo;t immediately popular. It contradicted an already-decided strategy and required significant rearchitecture investment. But I came prepared with a concrete architecture plan, an achievable partner success story, and a reimagined roadmap tied to measurable outcomes. Leadership agreed to pursue the initiative.</p>
 
     <div class="pull-quote">
       <p>The rearchitecture never shipped in its full form, a major divisional restructuring eliminated most of the team before we crossed the finish line. But the architecture we designed became the foundation for the partner-led application model that followed. The extensibility strategy enabled partners to continue what we built.</p>
@@ -143,7 +195,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
     <div class="section-label">The Strategic Shift</div>
     <h2>From feature list to outcomes-based roadmap</h2>
     <p>In parallel, I set out to rebuild the product roadmap from first principles. The existing approach organized everything by product line, fundraising features here, marketing features there, with the implicit goal of matching competitors feature-for-feature ahead of RFP cycles. Each list was well considered, but it was hard to imagine when the product gaps would be closed, for our customers and the team alike.</p>
-    <p>I replaced it with a theme-based, outcomes-driven roadmap built around five core ambitions for our customers. Each theme was connected to long-term outcome metrics, I defined high-level success measures for each and worked closely with fellow product managers to help them translate that thinking into measurable targets for their own initiatives.</p>
+    <p>I worked with the team to rebuild the roadmap based on themes and driven by our five core ambitions for our customers. Each theme was connected to long-term outcome metrics, I defined high-level success measures for each and worked closely with fellow product managers to help them translate that thinking into measurable targets for their own initiatives.</p>
 
     <iframe
   src="msft_roadmap.html"
@@ -163,7 +215,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
     <div class="section-label">Team Leadership</div>
     <h2>Coaching the team to think in outcomes</h2>
     <p>Changing the roadmap was only half the work. My fellow product managers struggled to define how they could measure their own initiatives and tie them to the aspirational outcomes. I coached them through it, providing high-level metrics for each long-term outcome and working with them to define measurable targets for their specific initiatives.</p>
-    <p>This went all the way down to design. My designer and I established a clear metric and threshold that determined when a design was considered validated by user testing, removing ambiguity from a part of the process that is often treated as subjective. By putting a stake in the ground on what we really wanted to enable for customers, it became easier for the whole team to apply that kind of thinking to their own work.</p>
+    <p>This went all the way down to design. My designer and I established success metrics that determined when a design was considered validated by user testing, removing ambiguity from a part of the process that is often treated as subjective. By putting a stake in the ground on what we really wanted to enable for customers, it became easier for the whole team to apply that kind of thinking to their own work.</p>
   </div>
 
   <hr class="divider">
@@ -181,8 +233,8 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
         <div class="label">Outcomes-based roadmap adopted as the organizing framework for engineering, leadership reporting, and customer communication</div>
       </div>
       <div class="result-item">
-        <div class="number">Platform lives on</div>
-        <div class="label">Extensible payments architecture became the foundation for the partner-led model that outlasted the original team</div>
+        <div class="number">Lasting impact</div>
+        <div class="label">Extensible payments architecture informed the partner-led model that outlasted the original team</div>
       </div>
     </div>
     <p class="footnote">Microsoft&rsquo;s Tech for Social Impact division was restructured into a broader Microsoft Philanthropies organization in late 2024.</p>
@@ -200,5 +252,12 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
   });
 </script>
 
+<footer>
+  <div>Nicole Bechard &nbsp;|&nbsp; Product Manager</div>
+  <div class="footer-links">
+    <a href="index.html#work">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
 </body>
 </html>

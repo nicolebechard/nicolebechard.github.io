@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Senior product manager open to data and AI product roles. Based in Prague. Get in touch directly. No InMail required.">
+<meta property="og:title" content="Contact | Nicole Bechard">
+<meta property="og:description" content="Senior product manager open to data and AI product roles. Based in Prague. Get in touch directly. No InMail required.">
+<meta property="og:image" content="https://nicolebechard.github.io/og-image.png">
+<meta property="og:url" content="https://nicolebechard.github.io/contact.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact | Nicole Bechard">
+<meta name="twitter:description" content="Senior product manager open to data and AI product roles. Based in Prague. Get in touch directly. No InMail required.">
+<meta name="twitter:image" content="https://nicolebechard.github.io/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Nicole Bechard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --slate: #4a4a6a;
+    --mist: #f4f3f0;
+    --cream: #faf9f7;
+    --accent: #2a6b7c;
+    --rule: #e0ddd8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,247,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--ink);
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate);
+  }
+  .nav-links a { text-decoration: none; color: inherit; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+
+  /* PAGE */
+  .page-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600; line-height: 1.2;
+    color: var(--ink); margin-bottom: 1.8rem;
+  }
+
+  h1 em { font-style: italic; }
+
+  .intro {
+    font-size: 1.05rem; font-weight: 300;
+    color: var(--slate); line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  hr.divider {
+    border: none; border-top: 1px solid var(--rule);
+    margin: 2.5rem 0;
+  }
+
+  /* OPEN TO */
+  .open-label {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--slate); margin-bottom: 1rem;
+  }
+
+  .tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag {
+    font-size: 0.8rem; font-weight: 400;
+    background: var(--mist);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.3rem 0.75rem;
+    color: var(--slate);
+  }
+
+  /* CTAs */
+  .cta-stack {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+    align-self: flex-start;
+  }
+  .btn-primary:hover { background: #1f5263; transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--slate); text-decoration: none;
+    transition: color 0.2s;
+    align-self: flex-start;
+  }
+  .btn-secondary:hover { color: var(--ink); }
+  .btn-secondary::after { content: ' →'; }
+
+  .note {
+    margin-top: 2.5rem;
+    font-size: 0.82rem; font-weight: 300;
+    color: var(--slate); font-style: italic;
+    border-left: 2px solid var(--rule);
+    padding-left: 1rem;
+    line-height: 1.6;
+  }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.8rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.77rem; color: var(--slate); font-weight: 300;
+}
+footer .footer-links { display: flex; gap: 2rem; }
+footer a { color: var(--slate); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--ink); }
+@media (max-width: 640px) {
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+  footer .footer-links { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name" style="text-decoration:none;">Nicole Bechard</a>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Portfolio</a>
+    <a href="#" onclick="return false;" style="opacity:0.45;cursor:default;">Writing</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="eyebrow">Get in touch</div>
+  <h1>Let's find a reason<br>to <em>work together.</em></h1>
+
+  <p class="intro">I'm a senior product manager based in Prague, currently open to new roles in data and AI products. I built my career across analytics platforms, nonprofit CRM, and collaborative work tools, and I'm looking for the next team worth building something with.</p>
+
+  <p class="intro">If you have a role, a problem, or just a perspective you want to share, I'm genuinely interested in hearing from you.</p>
+
+  <hr class="divider">
+
+  <div class="open-label">Currently open to</div>
+  <div class="tags">
+    <span class="tag">Senior PM roles</span>
+    <span class="tag">Data &amp; analytics products</span>
+    <span class="tag">AI-powered tools</span>
+    <span class="tag">0-to-1 and platform work</span>
+    <span class="tag">Remote or Prague-based</span>
+    <span class="tag">Full-time</span>
+  </div>
+
+  <div class="cta-stack">
+    <a href="mailto:nicole.bechard@gmail.com" class="btn-primary">
+      Send me an email
+    </a>
+    <a href="https://linkedin.com/in/nicolebbechard" target="_blank" rel="noopener" class="btn-secondary">
+      Connect on LinkedIn
+    </a>
+  </div>
+
+  <p class="note">Recruiters: email is the fastest way to reach me and skips the InMail queue entirely. I respond to every relevant message.</p>
+
+</div>
+
+<footer>
+  <div>Nicole Bechard &nbsp;|&nbsp; Product Manager</div>
+  <div class="footer-links">
+    <a href="index.html#work">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

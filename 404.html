@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The page you're looking for doesn't exist. Head back to Nicole Bechard's product management portfolio.">
+<meta property="og:title" content="Page Not Found | Nicole Bechard">
+<meta property="og:description" content="The page you're looking for doesn't exist. Head back to Nicole Bechard's product management portfolio.">
+<meta property="og:image" content="https://nicolebechard.github.io/og-image.png">
+<meta property="og:url" content="https://nicolebechard.github.io/404.html">
+<meta property="og:type" content="website">
+<title>Page Not Found | Nicole Bechard</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --slate: #4a4a6a;
+    --mist: #f4f3f0;
+    --cream: #faf9f7;
+    --accent: #2a6b7c;
+    --rule: #e0ddd8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,247,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate);
+  }
+  .nav-links a { text-decoration: none; color: inherit; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+
+  .page-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .error-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 600;
+    color: var(--mist);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    user-select: none;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 1rem; font-weight: 300;
+    color: var(--slate);
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn:hover { background: #1f5263; transform: translateY(-1px); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.8rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.77rem; color: var(--slate); font-weight: 300;
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  footer a { color: var(--slate); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+    .footer-links { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Nicole Bechard</a>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Portfolio</a>
+    <a href="#" onclick="return false;" style="opacity:0.45;cursor:default;">Writing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="error-num">404</div>
+  <h1>Nothing to see here.</h1>
+  <p>The page you're looking for doesn't exist. It may have moved, or the link might be wrong.</p>
+  <a href="index.html" class="btn">Back to portfolio</a>
+</div>
+
+<footer>
+  <div>Nicole Bechard &nbsp;|&nbsp; Product Manager</div>
+  <div class="footer-links">
+    <a href="index.html#work">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -40,6 +40,39 @@ Each page is a self-contained HTML file with all CSS embedded in `<style>` tags.
 - Each case study page uses a distinct accent color to distinguish the company
 - Navigation bar is sticky on all pages; case study pages link back to `index.html`
 
+## FrigoTime pages (`frigotime/`)
+
+A side project hosted on this site but **separate from the portfolio**: its own branding, not linked from portfolio pages. A future "Side Projects" section may link to it. The site's live domain is `nicolebechard.com` (see `CNAME`); absolute URLs in meta tags use it.
+
+**Pages (both live, launched September 2026):**
+- `frigotime/index.html` → `nicolebechard.com/frigotime/`: beta tester landing page. Built from a Claude Design handoff ("FrigoTime Beta Testing Brief").
+- `frigotime/privacy/index.html` → `nicolebechard.com/frigotime/privacy/`: beta privacy notice. Text is Nicole's own, reproduced verbatim; do not edit wording without her. Written in first person ("I"), unlike the beta page ("we"), because Nicole is the individual data controller.
+
+**Do not move or rename anything in `frigotime/`.** The URLs are in testers' inboxes and chats, the privacy URL is linked from the Tally form, and `frigotime/logo-wide.png` is loaded by URL in the FrigoTime Gmail signature.
+
+**Link-only by design:** both pages have `<meta name="robots" content="noindex, nofollow">`, are not in `sitemap.xml`, and are not linked from portfolio pages. Keep it that way unless Nicole decides otherwise.
+
+**External connections:**
+- All "Sign up" buttons (marked `data-signup`) → Tally form `https://tally.so/r/kdqD8r`. The form has its own cover image, thank-you page, and a link to the privacy notice.
+- "Contact us" buttons → `mailto:frigotimeapp@gmail.com`.
+- Applicants get replies from Gmail templates on frigotimeapp@gmail.com (accepted / not this round). The page promises a reply "within a few days"; keep page, thank-you page, and emails consistent.
+
+**Design (FrigoTime design system, not the portfolio's):**
+- Fonts: Fredoka (headings, buttons) + Inter (body), from Google Fonts.
+- Colors: brand green `#8dc63f`, amber `#fbb040`, pumpkin `#f7901e`, ink `#58595b` for all text. Tokens are in each page's `:root`.
+- Beta page structure: hero (green wash) → proof strip → amber band = the problem (intro, landscape, why it happens, the gap) → green band = the approach (how it works, what we're testing, what this isn't) → green sign-up section → footer.
+- Hero fridge photo is a half-oval dome anchored to the hero's bottom edge, centered on the phone screenshot; width responsive; hidden below 720px.
+- Images are separate files in `frigotime/` (not base64), resized for web. `og-image.png` (1200×630) is the link preview; preview title "Join the FrigoTime beta".
+- No JavaScript, consistent with the rest of the site.
+
+**Content rules:**
+- Photo `fridge-bg.jpg` is from Magnific (formerly Freepik) under the free license, which **requires** the footer credit "Designed by Magnific" linking to magnific.com. Do not remove it while the photo is used.
+- Food waste figures in "The landscape" are from UNEP Food Waste Index Report 2024 (2022 data) via Our World in Data, and are cited on the page.
+- Testing commitment is **4 weeks, at least 5 items per week**. Page, Tally form, and acceptance email must match.
+- Same copy rules as the portfolio: no em dashes, no hype or guilt framing.
+
+**Open / possible next work:** in-app feedback form and weekly check-in survey (not built yet; privacy notice already mentions the feedback form); Side Projects section on the portfolio.
+
 ## Copy and Voice
 
 - **No em dashes** — flagged as an AI signal; use commas, colons, or restructure the sentence

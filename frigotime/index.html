@@ -142,18 +142,21 @@
     content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ft-brand);
   }
   .hero-visual { flex: 0 1 300px; display: flex; justify-content: center; margin: 0 auto; position: relative; padding-top: 40px; }
-  /* Blurred fridge photo in an oval behind the phone. Desktop only. */
+  /* Blurred fridge photo: a half oval (dome) behind the phone, sitting on the hero's bottom edge.
+     The full oval is up to 725px wide and 720px tall; the hero's overflow:hidden cuts off the bottom half.
+     Width shrinks on narrower desktops so the dome stays on screen. Desktop only. */
   .hero-photo {
     position: absolute; z-index: 0;
-    top: 50%; left: 50%;
-    width: 400px; height: 460px;
-    transform: translate(-50%, -47%);
+    left: 50%; bottom: -44px;
+    width: clamp(560px, calc(100vw - 700px), 725px);
+    height: 720px;
+    transform: translate(-50%, 50%);
     border-radius: 50%;
     overflow: hidden;
-    opacity: 0.5;
     pointer-events: none;
   }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; filter: blur(2px); transform: scale(1.05); display: block; }
+  /* Only the top half of the oval is visible, so the photo fills that half, cropped to the peppers and greens shelf. */
+  .hero-photo img { width: 100%; height: 50%; object-fit: cover; object-position: 50% 62%; filter: blur(2px); transform: scale(1.05); display: block; }
   @media (max-width: 719px) {
     .hero-photo { display: none; }
     .hero-visual { padding-top: 0; }

@@ -189,13 +189,14 @@
   .band-end-amber { border-bottom: 1px solid color-mix(in srgb, var(--ft-accent) 26%, white); }
   .band-end-green { border-bottom: 1px solid color-mix(in srgb, var(--ft-brand) 26%, white); }
 
-  .intro { padding: 36px 20px; }
+  /* Full-width lead-in before the two-column brief: larger text so the width change reads as intentional. */
+  .intro { padding: 40px 20px; }
   .intro .wrap { display: flex; flex-direction: column; gap: 10px; }
   .intro h2, .signup h2 {
     font-family: var(--ft-font-cta); font-weight: 500;
     font-size: clamp(22px, 4vw, 28px); letter-spacing: -0.01em; color: var(--ft-ink); text-wrap: pretty;
   }
-  .intro p { font-size: var(--ft-text-base); line-height: 1.6; color: var(--ft-ink-70); max-width: 62ch; text-wrap: pretty; }
+  .intro p { font-size: 19px; line-height: 1.6; color: var(--ft-ink-70); max-width: 60ch; text-wrap: pretty; }
 
   /* Brief sections: heading column + body column */
   .brief { padding: 0 20px 32px; }
@@ -343,6 +344,7 @@
   .footer-tag { font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-sm); }
   .footer-meta { font-size: var(--ft-text-xs); }
   .footer-copy { font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+  .footer-copy a { color: inherit; text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -399,7 +401,7 @@
 <!-- THE PROBLEM (amber) -->
 <div class="band-amber band-end-amber">
 
-  <section class="intro" id="brief" style="border-bottom: 1px solid color-mix(in srgb, var(--ft-accent) 26%, white);">
+  <section class="intro" id="brief" style="border-bottom: 1px solid var(--rule-amber);">
     <div class="wrap">
       <h2>Why we're building this, and what we want to learn</h2>
       <p>We really care about not wasting food, and as home cooks who love exploring cultures through cooking, we keep a lot of fresh ingredients in our fridge. Keeping track of use-by dates and constantly checking freshness was exhausting. FrigoTime was born to preserve the joy of cooking with fresh ingredients by using them before they go bad, without the cognitive tax.<br><br>If you feel the same, we want to know if FrigoTime can help you waste less and feel that cooking joy when you open your fridge.</p>
@@ -615,6 +617,7 @@
   <div class="wrap">
     <span class="footer-tag">Track freshness. Waste less.</span>
     <span class="footer-meta">Closed beta · Now recruiting testers</span>
+    <span class="footer-copy">Fridge photo: <a href="https://www.magnific.com">Designed by Magnific</a></span>
     <span class="footer-copy">© 2026 FrigoTime. All rights reserved.</span>
   </div>
 </footer>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the FrigoTime beta</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="We're looking for home cooks to test an app that tracks what's about to expire in your fridge.">
+<meta property="og:title" content="Join the FrigoTime beta">
+<meta property="og:description" content="We're looking for home cooks to test an app that tracks what's about to expire in your fridge.">
+<meta property="og:image" content="https://nicolebechard.com/frigotime/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FrigoTime logo with the tagline Track freshness. Waste less., next to the app's My fridge screen">
+<meta property="og:url" content="https://nicolebechard.com/frigotime/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Join the FrigoTime beta">
+<meta name="twitter:description" content="We're looking for home cooks to test an app that tracks what's about to expire in your fridge.">
+<meta name="twitter:image" content="https://nicolebechard.com/frigotime/og-image.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* FrigoTime design system tokens (from the FrigoTime design system colors_and_type.css) */
+  :root {
+    --ft-brand: #8dc63f;
+    --ft-accent: #fbb040;
+    --ft-deep-orange: #f7901e;
+    --ft-ink: #58595b;
+    --ft-bg: #ffffff;
+    --ft-bg-page: #f9fafb;
+    --ft-border: #e5e7eb;
+    --ft-border-soft: #f3f4f6;
+    --ft-success-bg: #dcfce7;
+    --ft-success-fg: #166534;
+    --ft-success-solid: #22c55e;
+    --ft-ink-70: color-mix(in srgb, var(--ft-ink) 70%, transparent);
+    --ft-ink-50: color-mix(in srgb, var(--ft-ink) 50%, transparent);
+    --ft-ink-40: color-mix(in srgb, var(--ft-ink) 40%, transparent);
+    --ft-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --ft-font-cta: 'Fredoka', 'Inter', system-ui, sans-serif;
+    --ft-text-xs: 12px;
+    --ft-text-sm: 14px;
+    --ft-text-base: 16px;
+    --ft-text-lg: 18px;
+    --ft-text-xl: 20px;
+    --ft-radius-sm: 8px;
+    --ft-radius-md: 12px;
+    --ft-radius-lg: 16px;
+    --ft-radius-pill: 9999px;
+    --ft-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    --ft-shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    --ft-transition-colors: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    --ft-touch-min: 44px;
+
+    /* Page-level washes */
+    --wash-green: color-mix(in srgb, var(--ft-brand) 12%, white);
+    --wash-amber: color-mix(in srgb, var(--ft-accent) 12%, white);
+    --rule-green: color-mix(in srgb, var(--ft-brand) 30%, white);
+    --rule-amber: color-mix(in srgb, var(--ft-accent) 30%, white);
+    --btn-soft: color-mix(in srgb, var(--ft-accent) 25%, white);
+    --btn-soft-hover: color-mix(in srgb, var(--ft-accent) 40%, white);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--ft-font-sans);
+    color: var(--ft-ink);
+    background: var(--ft-bg-page);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--ft-brand); text-decoration: none; }
+  a:hover { color: color-mix(in srgb, var(--ft-brand) 80%, black); }
+  img { max-width: 100%; }
+  h1, h2, h3, p, figure { margin: 0; }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: var(--ft-touch-min);
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-base);
+    border-radius: var(--ft-radius-md);
+    padding: 12px 20px;
+    transition: var(--ft-transition-colors);
+  }
+  .btn-sm { min-height: 36px; font-size: var(--ft-text-sm); padding: 8px 14px; white-space: nowrap; }
+  .btn-primary { background: var(--ft-brand); color: white; }
+  .btn-primary:hover { background: color-mix(in srgb, var(--ft-brand) 90%, black); color: white; }
+  .btn-soft { background: var(--btn-soft); color: var(--ft-ink); }
+  .btn-soft:hover { background: var(--btn-soft-hover); color: var(--ft-ink); }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 2px solid color-mix(in srgb, var(--ft-brand) 40%, white);
+    padding: 10px 20px;
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav-brand, .nav-actions { display: flex; align-items: center; }
+  .nav-brand { gap: 8px; }
+  .nav-actions { gap: 10px; }
+  .nav-brand img { height: 32px; width: auto; display: block; }
+  .beta-pill {
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+    color: var(--ft-deep-orange);
+    background: color-mix(in srgb, var(--ft-accent) 20%, white);
+    border-radius: var(--ft-radius-pill);
+    padding: 3px 9px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative; overflow: hidden;
+    background: color-mix(in srgb, var(--ft-brand) 14%, white);
+    border-bottom: 1px solid var(--rule-green);
+    padding: 40px 20px 44px;
+  }
+  .hero .wrap { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+  .hero-copy { flex: 1 1 340px; display: flex; flex-direction: column; gap: 18px; }
+  .hero-title { display: flex; align-items: center; gap: 18px; }
+  .hero-title img { width: 83px; height: 83px; object-fit: contain; display: block; flex-shrink: 0; }
+  .hero h1 {
+    font-family: var(--ft-font-cta); font-weight: 500;
+    font-size: clamp(28px, 5vw, 38px); line-height: 1.15; letter-spacing: -0.02em;
+    color: var(--ft-ink); text-wrap: pretty;
+  }
+  .hero-lede { font-size: 17px; line-height: 1.6; color: var(--ft-ink-70); max-width: 46ch; text-wrap: pretty; }
+  .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 2px; }
+  .hero-ctas .btn-soft { padding: 12px 18px; }
+  .beta-status {
+    align-self: flex-start; display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-xs); letter-spacing: 0.05em;
+    color: var(--ft-ink-70);
+  }
+  .beta-status::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ft-brand);
+  }
+  .hero-visual { flex: 0 1 300px; display: flex; justify-content: center; margin: 0 auto; position: relative; padding-top: 40px; }
+  /* Blurred fridge photo: a half oval (dome) behind the phone, sitting on the hero's bottom edge.
+     The full oval is up to 725px wide and 720px tall; the hero's overflow:hidden cuts off the bottom half.
+     Width shrinks on narrower desktops so the dome stays on screen. Desktop only. */
+  .hero-photo {
+    position: absolute; z-index: 0;
+    left: 50%; bottom: -44px;
+    width: clamp(560px, calc(100vw - 700px), 725px);
+    height: 720px;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  /* Only the top half of the oval is visible, so the photo fills that half, cropped to the peppers and greens shelf. */
+  .hero-photo img { width: 100%; height: 50%; object-fit: cover; object-position: 50% 62%; filter: blur(2px); transform: scale(1.05); display: block; }
+  @media (max-width: 719px) {
+    .hero-photo { display: none; }
+    .hero-visual { padding-top: 0; }
+  }
+  .phone {
+    width: 100%; max-width: 300px;
+    background: var(--ft-bg); border-radius: 34px; padding: 10px;
+    box-shadow: var(--ft-shadow-xl);
+    position: relative; z-index: 1;
+  }
+  .phone-screen { background: var(--ft-bg-page); border-radius: 26px; overflow: hidden; }
+  .phone-notch { display: flex; justify-content: center; padding: 8px 0 4px; }
+  .phone-notch span { width: 56px; height: 5px; border-radius: var(--ft-radius-pill); background: var(--ft-border); }
+  .phone-screen img { display: block; width: 100%; }
+
+  /* PROOF STRIP */
+  .proof { background: var(--ft-bg); border-bottom: 1px solid var(--ft-border); padding: 22px 20px; }
+  .proof .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .proof-card {
+    background: color-mix(in srgb, var(--ft-brand) 16%, white);
+    border-radius: var(--ft-radius-lg); padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .proof-card strong { font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-sm); color: var(--ft-ink); }
+  .proof-card span { font-size: var(--ft-text-xs); line-height: 1.5; color: var(--ft-ink-70); }
+
+  /* BANDS: amber = the problem, green = the approach */
+  .band-amber { background: var(--wash-amber); }
+  .band-green { background: var(--wash-green); }
+  .band-end-amber { border-bottom: 1px solid color-mix(in srgb, var(--ft-accent) 26%, white); }
+  .band-end-green { border-bottom: 1px solid color-mix(in srgb, var(--ft-brand) 26%, white); }
+
+  /* Full-width lead-in before the two-column brief: larger text so the width change reads as intentional. */
+  .intro { padding: 40px 20px; }
+  .intro .wrap { display: flex; flex-direction: column; gap: 10px; }
+  .intro h2, .signup h2 {
+    font-family: var(--ft-font-cta); font-weight: 500;
+    font-size: clamp(22px, 4vw, 28px); letter-spacing: -0.01em; color: var(--ft-ink); text-wrap: pretty;
+  }
+  .intro p { font-size: 19px; line-height: 1.6; color: var(--ft-ink-70); max-width: 60ch; text-wrap: pretty; }
+
+  /* Brief sections: heading column + body column */
+  .brief { padding: 0 20px 32px; }
+  .brief.first { padding-top: 32px; }
+  .brief.last { padding-bottom: 36px; }
+  .brief-row { display: flex; flex-wrap: wrap; gap: 20px 32px; }
+  .brief.ruled .brief-row { padding-top: 28px; }
+  .band-amber .brief.ruled .brief-row { border-top: 1px solid var(--rule-amber); }
+  .band-green .brief.ruled .brief-row { border-top: 1px solid var(--rule-green); }
+  .brief h3, .how h3 {
+    flex: 0 0 180px;
+    font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-xl); color: var(--ft-ink);
+  }
+  .brief-body { flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px; }
+  .body-text { font-size: 17px; line-height: 1.65; color: var(--ft-ink); max-width: 62ch; text-wrap: pretty; }
+  .body-text strong { font-weight: 700; }
+
+  /* 01 data panel */
+  .data-panel { background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 18px 20px; display: flex; flex-direction: column; gap: 18px; }
+  .data-bar-block { display: flex; flex-direction: column; gap: 10px; }
+  .data-bar-title { font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-base); color: var(--ft-ink); }
+  .data-bar { display: flex; height: 30px; border-radius: var(--ft-radius-lg); overflow: hidden; }
+  .seg-home { background: var(--ft-deep-orange); }
+  .seg-food { background: color-mix(in srgb, var(--ft-accent) 55%, white); }
+  .seg-retail { background: color-mix(in srgb, var(--ft-accent) 25%, white); }
+  .data-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .data-legend span { display: inline-flex; align-items: center; gap: 6px; font-size: var(--ft-text-xs); color: var(--ft-ink-70); }
+  .data-legend span:first-child { color: var(--ft-ink); }
+  .data-legend strong { font-weight: 600; }
+  .data-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .data-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;
+    border-top: 1px solid var(--ft-border-soft); padding-top: 16px;
+  }
+  .data-stats div { display: flex; flex-direction: column; gap: 3px; }
+  .data-stats strong { font-family: var(--ft-font-cta); font-weight: 600; font-size: 28px; line-height: 1.1; color: var(--ft-ink); }
+  .data-stats span { font-size: var(--ft-text-xs); line-height: 1.45; color: var(--ft-ink-70); }
+  .data-source { font-size: 11px; line-height: 1.5; color: var(--ft-ink-50); border-top: 1px solid var(--ft-border-soft); padding-top: 12px; }
+  .data-source a { color: var(--ft-ink-70); }
+
+  /* 02 storage chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span { font-size: var(--ft-text-xs); color: var(--ft-ink-70); background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 8px 12px; }
+  .chips span:last-child { color: var(--ft-ink-50); }
+
+  /* 04 how it works */
+  .how { padding: 60px 20px 32px; }
+  .how > .wrap { display: flex; flex-direction: column; gap: 22px; }
+  .steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .steps li { display: flex; flex-direction: column; gap: 6px; background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 16px 18px; }
+  .steps .when { font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+  .steps .what { font-size: var(--ft-text-base); line-height: 1.55; color: var(--ft-ink); }
+  .steps strong { font-weight: 600; }
+
+  /* App screen mockups */
+  .screens { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; align-items: start; }
+  figure.screen { display: flex; flex-direction: column; gap: 10px; }
+  .screen-card { background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 16px; box-shadow: var(--ft-shadow-md); display: flex; flex-direction: column; gap: 10px; }
+  .screen-title { font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-lg); color: var(--ft-ink); }
+  figcaption { font-size: var(--ft-text-xs); line-height: 1.5; color: var(--ft-ink-70); }
+  .box { border: 1px solid var(--ft-border); border-radius: var(--ft-radius-lg); padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+  .box-soft { border-color: var(--ft-border-soft); padding: 12px 14px; }
+  .t-xs { font-size: var(--ft-text-xs); }
+  .t-10 { font-size: 10px; }
+  .ink-70 { color: var(--ft-ink-70); }
+  .ink-50 { color: var(--ft-ink-50); }
+  .ink-40 { color: var(--ft-ink-40); }
+  .item-name { font-weight: 600; font-size: var(--ft-text-xs); color: var(--ft-ink); }
+  .fake-btn {
+    text-align: center; font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-xs);
+    color: white; background: var(--ft-brand); border-radius: var(--ft-radius-md); padding: 11px;
+  }
+  .scan { padding: 12px; gap: 8px; }
+  .scan-btns { display: flex; gap: 8px; }
+  .scan-btns span { flex: 1; text-align: center; font-size: 11px; color: var(--ft-ink-70); border: 1px solid var(--ft-border); border-radius: var(--ft-radius-md); padding: 8px 4px; }
+  .or { text-align: center; font-size: 10px; color: var(--ft-ink-40); }
+  .typed { font-size: var(--ft-text-xs); color: var(--ft-ink-70); line-height: 1.6; }
+  .verify {
+    background: color-mix(in srgb, var(--ft-accent) 20%, white);
+    border: 1px solid color-mix(in srgb, var(--ft-accent) 40%, white);
+    gap: 4px;
+  }
+  .verify-badge {
+    align-self: flex-start; font-size: 9px; font-weight: 600; color: var(--ft-deep-orange);
+    background: var(--ft-bg); border-radius: var(--ft-radius-pill); padding: 3px 8px;
+  }
+  .progress-big { font-family: var(--ft-font-cta); font-weight: 600; font-size: 36px; line-height: 1; color: var(--ft-brand); }
+  .progress-up { font-size: var(--ft-text-xs); font-weight: 500; color: var(--ft-success-fg); }
+  .box-soft.stack { gap: 4px; }
+  .box-soft.stack8 { gap: 8px; }
+  .values { display: flex; gap: 20px; }
+  .values > span { display: flex; flex-direction: column; }
+  .values strong { font-size: var(--ft-text-sm); font-weight: 600; }
+  .v-used { color: var(--ft-brand); }
+  .v-wasted { color: var(--ft-accent); }
+  .trend { display: flex; align-items: flex-end; gap: 6px; height: 52px; }
+  .trend > span { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; border-radius: 3px 3px 0 0; overflow: hidden; }
+  .trend .w { background: var(--ft-border); }
+  .trend .u { background: color-mix(in srgb, var(--ft-brand) 70%, white); }
+  .trend-legend { display: flex; gap: 12px; font-size: 10px; color: var(--ft-ink-50); }
+  .trend-legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .trend-legend i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+
+  /* 05 research questions */
+  .questions { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .questions div { background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .questions span { font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+  .questions p { font-size: var(--ft-text-sm); line-height: 1.5; color: var(--ft-ink); }
+  .pull { font-family: var(--ft-font-cta); font-weight: 500; font-size: 20px; line-height: 1.45; color: var(--ft-ink); max-width: 46ch; text-wrap: pretty; }
+
+  /* 06 what this isn't */
+  .isnt-body { flex: 1 1 320px; display: flex; flex-wrap: wrap; gap: 16px 24px; }
+  .isnt-body .body-text { flex: 1 1 260px; max-width: 52ch; }
+  .isnt-body figure { flex: 0 1 240px; }
+  .expired-row { flex-direction: row; justify-content: space-between; gap: 8px; align-items: center; }
+  .expired-row > span:first-child { display: flex; flex-direction: column; gap: 2px; }
+  .expired-actions { display: flex; gap: 6px; }
+  .expired-actions span {
+    font-family: var(--ft-font-cta); font-weight: 500; font-size: 10px;
+    background: var(--ft-bg-page); border-radius: var(--ft-radius-sm); padding: 6px 9px;
+  }
+
+  /* SIGN UP */
+  .signup { padding: 48px 20px 44px; background: var(--ft-brand); }
+  .signup-card {
+    display: flex; flex-wrap: wrap; gap: 32px; align-items: center;
+    background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 28px 24px; box-shadow: var(--ft-shadow-md);
+  }
+  .signup-copy { flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px; }
+  .signup-copy p { font-size: 17px; line-height: 1.6; color: var(--ft-ink-70); max-width: 52ch; text-wrap: pretty; }
+  .signup-ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .signup-note { font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+  .toast {
+    flex: 0 1 240px; margin: 0 auto;
+    background: var(--ft-success-solid); border-radius: var(--ft-radius-lg);
+    padding: 20px 24px; text-align: center; box-shadow: var(--ft-shadow-xl);
+  }
+  .toast-emoji { font-size: 34px; margin-bottom: 6px; }
+  .toast-title { font-weight: 600; font-size: var(--ft-text-lg); color: white; }
+  .toast-sub { font-size: var(--ft-text-xs); color: var(--ft-success-bg); margin-top: 4px; }
+
+  /* FOOTER */
+  footer { padding: 24px 20px 40px; background: var(--ft-border-soft); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+  .footer-tag { font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-sm); }
+  .footer-meta { font-size: var(--ft-text-xs); }
+  .footer-copy { font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+  .footer-copy a { color: inherit; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- Sign up buttons: every link marked data-signup points to the Tally signup form. -->
+
+<nav>
+  <div class="wrap">
+    <div class="nav-brand">
+      <img src="logo-wide.png" alt="FrigoTime">
+      <span class="beta-pill">Beta</span>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-sm btn-soft" href="mailto:frigotimeapp@gmail.com">Contact us</a>
+      <a class="btn btn-sm btn-primary" href="https://tally.so/r/kdqD8r" data-signup>Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-title">
+        <img src="logo.png" alt="">
+        <h1>Track freshness. Waste less.</h1>
+      </div>
+      <p class="hero-lede">For busy home cooks who can't keep track of everything in their fridge. No manual logging and no guilt. You just get visibility into what needs using first.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://tally.so/r/kdqD8r" data-signup>Sign up to test FrigoTime</a>
+        <a class="btn btn-soft" href="#brief">Read more</a>
+      </div>
+      <span class="beta-status">Closed beta · now recruiting testers</span>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo" aria-hidden="true"><img src="fridge-bg.jpg" alt=""></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"><span></span></div>
+          <img src="app-screenshot.png" alt="FrigoTime app showing fridge items with expiry alerts">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-card"><strong>Shelf-life data, not guesses</strong><span>Freshness windows from the USDA FoodKeeper database.</span></div>
+    <div class="proof-card"><strong>No manual logging</strong><span>Add what you bought once; tracking happens behind the scenes.</span></div>
+    <div class="proof-card"><strong>Waste and cost, side by side</strong><span>See the share of food you use and the money you keep.</span></div>
+  </div>
+</section>
+
+<!-- THE PROBLEM (amber) -->
+<div class="band-amber band-end-amber">
+
+  <section class="intro" id="brief" style="border-bottom: 1px solid var(--rule-amber);">
+    <div class="wrap">
+      <h2>Why we're building this, and what we want to learn</h2>
+      <p>We really care about not wasting food, and as home cooks who love exploring cultures through cooking, we keep a lot of fresh ingredients in our fridge. Keeping track of use-by dates and constantly checking freshness was exhausting. FrigoTime was born to preserve the joy of cooking with fresh ingredients by using them before they go bad, without the cognitive tax.<br><br>If you feel the same, we want to know if FrigoTime can help you waste less and feel that cooking joy when you open your fridge.</p>
+    </div>
+  </section>
+
+  <section class="brief first">
+    <div class="wrap brief-row">
+      <h3>The landscape</h3>
+      <div class="brief-body">
+        <p class="body-text">Globally, households are responsible for the largest share of food waste. Awareness is generally there. Visibility is the harder part: most people don't know what's in their fridge, when things will go bad, or what to prioritize using first.</p>
+
+        <div class="data-panel">
+          <div class="data-bar-block">
+            <span class="data-bar-title">Where the world's food waste happens</span>
+            <div class="data-bar" role="img" aria-label="Households 60%, food service 28%, retail 12%">
+              <span class="seg-home" style="flex: 60;"></span>
+              <span class="seg-food" style="flex: 28;"></span>
+              <span class="seg-retail" style="flex: 12;"></span>
+            </div>
+            <div class="data-legend">
+              <span><i class="seg-home"></i><strong>60%</strong> households</span>
+              <span><i class="seg-food"></i>28% food service</span>
+              <span><i class="seg-retail"></i>12% retail</span>
+            </div>
+          </div>
+          <div class="data-stats">
+            <div><strong>79 kg</strong><span>wasted per person each year, at home</span></div>
+            <div><strong>631 Mt</strong><span>of the 1.05 bn tonnes wasted in 2022 came from households</span></div>
+            <div><strong>19%</strong><span>of all food available to consumers is thrown away</span></div>
+          </div>
+          <p class="data-source">Source: UNEP <em>Food Waste Index Report 2024</em> (2022 data), via <a href="https://ourworldindata.org/grapher/food-waste-per-capita">Our World in Data</a>. Total food waste across households, food service, and retail came to 132 kg per person per year.</p>
+        </div>
+
+        <p class="body-text">Household food waste is fairly consistent across income levels, differing by only about 7 kg per person. That points to tracking, not affordability, as the behavior to change.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brief ruled">
+    <div class="wrap brief-row">
+      <h3>Why it happens</h3>
+      <div class="brief-body" style="gap: 12px;">
+        <p class="body-text">Busy people have limited time and memory. Manually tracking groceries, expiration dates, and what's actually usable requires sustained effort that most households can't maintain alongside work, family, and everything else.</p>
+        <div class="chips">
+          <span>❄️ Fridge</span>
+          <span>🧊 Freezer</span>
+          <span>🗄️ Pantry</span>
+          <span>🍎 Counter</span>
+          <span>Four places to lose track of food</span>
+        </div>
+        <p class="body-text">Existing solutions ask users to do the tracking themselves. That works well for people who are already highly organized, and less well for most other households.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brief ruled last">
+    <div class="wrap brief-row">
+      <h3>The gap</h3>
+      <div class="brief-body">
+        <p class="body-text">There's a mismatch between the problem and the solutions available. People want to waste less, but they don't have bandwidth for manual inventory systems or to learn a new recipe every time they want to use up their leftover produce.</p>
+        <p class="body-text"><strong>What's missing is something that does the tracking for you, so you can focus on the actual decision: what should we make for dinner?</strong></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- THE APPROACH (green) -->
+<div class="band-green band-end-green">
+
+  <section class="how">
+    <div class="wrap">
+      <div class="brief-row">
+        <h3>How FrigoTime works</h3>
+        <p class="body-text" style="flex: 1 1 320px;">When you add groceries, FrigoTime tracks freshness windows behind the scenes using shelf-life data from authorities like the USDA FoodKeeper database. The app tells you what needs attention first, without any manual logging.</p>
+      </div>
+
+      <ol class="steps">
+        <li><span class="when">Day 1</span><span class="what"><strong>Add what you bought.</strong> Freshness windows and storage locations are applied for you.</span></li>
+        <li><span class="when">Weeks 1–2</span><span class="what"><strong>We build a baseline</strong> of how much of your groceries you typically use, so the numbers later mean something.</span></li>
+        <li><span class="when">Week 3+</span><span class="what"><strong>Your Progress appears:</strong> the share of food you use, the money you keep, and how both move week to week.</span></li>
+      </ol>
+
+      <div class="screens">
+
+        <figure class="screen">
+          <div class="screen-card" aria-hidden="true">
+            <span class="screen-title">Add groceries</span>
+            <div class="box scan">
+              <span class="item-name">📷 Scan a receipt</span>
+              <div class="scan-btns"><span>Take photo</span><span>Upload photo</span></div>
+            </div>
+            <span class="or">or type items</span>
+            <div class="box typed"><span>chicken breast</span><span>spinach</span><span>milk</span><span>eggs</span></div>
+            <span class="fake-btn">Identify items →</span>
+          </div>
+          <figcaption>Entry takes one step: a receipt photo or a typed list.</figcaption>
+        </figure>
+
+        <figure class="screen">
+          <div class="screen-card" aria-hidden="true">
+            <span class="screen-title">Review items</span>
+            <span class="t-10 ink-50" style="line-height: 1.5;">Freshness estimates are based on USDA FoodKeeper data. Items with a <span style="color: var(--ft-accent);">?</span> badge need a quick check.</span>
+            <div class="box"><span class="item-name">Spinach</span><span class="t-10 ink-40">from: BIO SPINACH 200G · ❄️ Fridge</span></div>
+            <div class="box"><span class="item-name">Chicken, whole</span><span class="t-10 ink-40">from: CHKN BRST 500 · ❄️ Fridge</span></div>
+            <div class="box verify">
+              <span class="verify-badge">? Please verify</span>
+              <span class="item-name">Yogurt, Greek</span>
+              <span class="t-10 ink-50">from: GRK YGHT LRG · ❄️ Fridge</span>
+            </div>
+            <span class="fake-btn">Add 4 items to my fridge</span>
+          </div>
+          <figcaption>We show our work: matched names, the source line, and where we're unsure.</figcaption>
+        </figure>
+
+        <figure class="screen">
+          <div class="screen-card" aria-hidden="true">
+            <span class="screen-title">Progress</span>
+            <div class="box box-soft stack">
+              <span class="progress-big">78%</span>
+              <span class="t-xs ink-70">of groceries used this month</span>
+              <span class="progress-up">↑ 6% from last month</span>
+              <span class="t-10 ink-40">When you started, you were using 58%.</span>
+            </div>
+            <div class="box box-soft stack8">
+              <span class="t-10 ink-40">Value, based on scanned receipts</span>
+              <div class="values">
+                <span><strong class="v-used">€640.30</strong><span class="t-10 ink-40">used</span></span>
+                <span><strong class="v-wasted">€180.60</strong><span class="t-10 ink-40">wasted</span></span>
+              </div>
+            </div>
+            <div class="box box-soft stack8">
+              <span class="t-10 ink-40">Trend</span>
+              <div class="trend">
+                <span style="height: 32px;"><span class="w" style="height: 22%;"></span><span class="u" style="height: 78%;"></span></span>
+                <span style="height: 40px;"><span class="w" style="height: 18%;"></span><span class="u" style="height: 82%;"></span></span>
+                <span style="height: 35px;"><span class="w" style="height: 30%;"></span><span class="u" style="height: 70%;"></span></span>
+                <span style="height: 46px;"><span class="w" style="height: 15%;"></span><span class="u" style="height: 85%;"></span></span>
+                <span style="height: 39px;"><span class="w" style="height: 25%;"></span><span class="u" style="height: 75%;"></span></span>
+                <span style="height: 52px;"><span class="w" style="height: 12%;"></span><span class="u" style="height: 88%;"></span></span>
+              </div>
+              <div class="trend-legend">
+                <span><i class="u"></i>Used</span>
+                <span><i class="w"></i>Wasted</span>
+              </div>
+            </div>
+          </div>
+          <figcaption>From week three: waste and cost, measured against your own baseline.</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="brief ruled">
+    <div class="wrap brief-row">
+      <h3>What we're testing</h3>
+      <div class="brief-body" style="gap: 16px;">
+        <p class="body-text">Does removing the friction of manual tracking actually change behavior? We're measuring whether people stick with FrigoTime long enough to see their food waste drop, and whether cost savings, shown alongside waste reduction, keep them motivated. We ask that you add at least <strong>5 items every week for 4 weeks</strong>.</p>
+        <div class="questions">
+          <div><span>Question 1</span><p>Do testers keep using it past the baseline weeks?</p></div>
+          <div><span>Question 2</span><p>Does measured waste actually go down over time?</p></div>
+          <div><span>Question 3</span><p>Does showing money saved sustain the habit?</p></div>
+        </div>
+        <p class="pull">The outcome we care about isn't the app itself. It's a measurable shift in how much food households waste over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brief ruled last">
+    <div class="wrap brief-row">
+      <h3>What this isn't</h3>
+      <div class="isnt-body">
+        <p class="body-text">FrigoTime isn't a full kitchen inventory system. We're focused specifically on perishables and fresh ingredients. These are the items that produce methane in landfills and account for much of what households throw away.</p>
+        <figure class="screen">
+          <div class="screen-card" aria-hidden="true">
+            <span style="font-weight: 600; font-size: var(--ft-text-sm);">Did you use these?</span>
+            <span class="t-10 ink-50">These items have passed their freshness window</span>
+            <div class="box expired-row">
+              <span><span class="item-name ink-70">Milk</span><span class="t-10 ink-40">❄️ Fridge · Expired</span></span>
+              <span class="expired-actions"><span>Used ✓</span><span class="ink-50">×</span></span>
+            </div>
+          </div>
+          <figcaption>We only ask about things that expire, not a full pantry audit.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<section class="signup" id="signup">
+  <div class="wrap signup-card">
+    <div class="signup-copy">
+      <h2>Sign up to test FrigoTime</h2>
+      <p>We're looking for people who care about reducing food waste and have time to share feedback as we build.</p>
+      <div class="signup-ctas">
+        <a class="btn btn-primary" href="https://tally.so/r/kdqD8r" data-signup>Sign up to test FrigoTime</a>
+        <a class="btn btn-soft" href="mailto:frigotimeapp@gmail.com">Contact us</a>
+        <span class="signup-note">Takes about a minute · we'll email when your spot opens</span>
+      </div>
+    </div>
+    <div class="toast" aria-hidden="true">
+      <div class="toast-emoji">🎉</div>
+      <div class="toast-title">Nice work!</div>
+      <div class="toast-sub">One less thing going to waste.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-tag">Track freshness. Waste less.</span>
+    <span class="footer-meta">Closed beta · Now recruiting testers</span>
+    <span class="footer-copy">Fridge photo: <a href="https://www.magnific.com">Designed by Magnific</a></span>
+    <span class="footer-copy">© 2026 FrigoTime. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

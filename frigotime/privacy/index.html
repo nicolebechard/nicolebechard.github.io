@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy notice | FrigoTime beta</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="What personal data FrigoTime collects from beta testers and applicants, why, who else handles it, and what your rights are.">
+<meta property="og:title" content="FrigoTime privacy notice (beta)">
+<meta property="og:description" content="What personal data FrigoTime collects from beta testers and applicants, why, who else handles it, and what your rights are.">
+<meta property="og:image" content="https://nicolebechard.com/frigotime/og-image.png">
+<meta property="og:url" content="https://nicolebechard.com/frigotime/privacy/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="../logo.png">
+<link rel="apple-touch-icon" href="../logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* FrigoTime design system tokens (same as ../index.html) */
+  :root {
+    --ft-brand: #8dc63f;
+    --ft-accent: #fbb040;
+    --ft-deep-orange: #f7901e;
+    --ft-ink: #58595b;
+    --ft-bg: #ffffff;
+    --ft-border: #e5e7eb;
+    --ft-border-soft: #f3f4f6;
+    --ft-ink-70: color-mix(in srgb, var(--ft-ink) 70%, transparent);
+    --ft-ink-50: color-mix(in srgb, var(--ft-ink) 50%, transparent);
+    --ft-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --ft-font-cta: 'Fredoka', 'Inter', system-ui, sans-serif;
+    --ft-text-xs: 12px;
+    --ft-text-sm: 14px;
+    --ft-radius-md: 12px;
+    --ft-radius-lg: 16px;
+    --ft-radius-pill: 9999px;
+    --ft-transition-colors: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    --wash-green: color-mix(in srgb, var(--ft-brand) 14%, white);
+    --rule-green: color-mix(in srgb, var(--ft-brand) 30%, white);
+    --btn-soft: color-mix(in srgb, var(--ft-accent) 25%, white);
+    --btn-soft-hover: color-mix(in srgb, var(--ft-accent) 40%, white);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--ft-font-sans);
+    color: var(--ft-ink);
+    background: var(--ft-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: color-mix(in srgb, var(--ft-brand) 55%, var(--ft-ink)); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--ft-ink); }
+  h1, h2, p { margin: 0; }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  .doc { max-width: 760px; margin: 0 auto; }
+
+  /* NAV (matches the beta page) */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 2px solid color-mix(in srgb, var(--ft-brand) 40%, white);
+    padding: 10px 20px;
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-brand img { height: 32px; width: auto; display: block; }
+  .beta-pill {
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+    color: var(--ft-deep-orange);
+    background: color-mix(in srgb, var(--ft-accent) 20%, white);
+    border-radius: var(--ft-radius-pill);
+    padding: 3px 9px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 36px; padding: 8px 14px; white-space: nowrap;
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-sm);
+    border-radius: var(--ft-radius-md);
+    background: var(--btn-soft); color: var(--ft-ink); text-decoration: none;
+    transition: var(--ft-transition-colors);
+  }
+  .btn:hover { background: var(--btn-soft-hover); color: var(--ft-ink); }
+
+  /* HEADER */
+  header { background: var(--wash-green); border-bottom: 1px solid var(--rule-green); padding: 36px 20px 32px; }
+  header .doc { display: flex; flex-direction: column; gap: 12px; }
+  h1 {
+    font-family: var(--ft-font-cta); font-weight: 500;
+    font-size: clamp(26px, 5vw, 34px); line-height: 1.15; letter-spacing: -0.02em;
+  }
+  .updated { font-size: var(--ft-text-sm); color: var(--ft-ink-70); }
+  .lede { font-size: 17px; line-height: 1.6; color: var(--ft-ink); max-width: 62ch; text-wrap: pretty; }
+
+  /* BODY */
+  main { padding: 8px 20px 48px; }
+  section { padding-top: 32px; }
+  section + section { border-top: 1px solid var(--ft-border-soft); margin-top: 32px; }
+  h2 { font-family: var(--ft-font-cta); font-weight: 500; font-size: 22px; margin-bottom: 12px; }
+  main p { font-size: 16px; line-height: 1.65; max-width: 68ch; text-wrap: pretty; }
+  main p + p, main p + table, main table + p, main p + ul { margin-top: 14px; }
+  main strong { font-weight: 600; }
+  ul { margin: 0; padding-left: 20px; }
+  li { font-size: 16px; line-height: 1.6; margin-bottom: 8px; max-width: 68ch; }
+
+  /* TABLES: bordered on desktop, stacked cards on phones */
+  table { width: 100%; border-collapse: collapse; font-size: var(--ft-text-sm); line-height: 1.55; }
+  th {
+    text-align: left; vertical-align: bottom;
+    font-weight: 600; font-size: var(--ft-text-xs); letter-spacing: 0.03em; color: var(--ft-ink-70);
+    border-bottom: 2px solid var(--ft-border); padding: 8px 12px 8px 0;
+  }
+  td { vertical-align: top; border-bottom: 1px solid var(--ft-border); padding: 12px 12px 12px 0; }
+  td:first-child { width: 30%; }
+  @media (max-width: 640px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { display: none; }
+    tr { border: 1px solid var(--ft-border); border-radius: var(--ft-radius-lg); padding: 12px 14px; margin-bottom: 10px; }
+    td, td:first-child { width: 100%; border: 0; padding: 4px 0; }
+    td::before {
+      content: attr(data-label); display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.03em; color: var(--ft-ink-50); text-transform: uppercase;
+    }
+  }
+
+  /* FOOTER (matches the beta page) */
+  footer { padding: 24px 20px 40px; background: var(--ft-border-soft); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+  .footer-tag { font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-sm); }
+  .footer-meta { font-size: var(--ft-text-xs); }
+  .footer-meta a { color: inherit; }
+  .footer-copy { font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="nav-brand" href="../">
+      <img src="../logo-wide.png" alt="FrigoTime">
+      <span class="beta-pill">Beta</span>
+    </a>
+    <a class="btn" href="../">← Back to the beta page</a>
+  </div>
+</nav>
+
+<header>
+  <div class="doc">
+    <h1>FrigoTime Privacy Notice (Beta)</h1>
+    <p class="updated"><strong>Last updated:</strong> September 29, 2026</p>
+    <p class="lede">FrigoTime is a small food waste app in beta testing. This page explains what personal data I collect from beta testers and applicants, why, who else handles it, and what your rights are. I have tried to keep it short and plain.</p>
+  </div>
+</header>
+
+<main>
+  <div class="doc">
+
+    <section>
+      <h2>1. Who is responsible for your data</h2>
+      <p>I am. I am an individual based in Prague, Czech Republic, and I run FrigoTime.<br>
+      Contact for anything privacy related, including deletion requests: <strong><a href="mailto:frigotimeapp@gmail.com">frigotimeapp@gmail.com</a></strong></p>
+    </section>
+
+    <section>
+      <h2>2. What I collect, why, and on what basis</h2>
+      <table>
+        <thead><tr><th>What</th><th>Why</th><th>Legal basis (Article 6 GDPR)</th></tr></thead>
+        <tbody>
+          <tr><td data-label="What"><strong>Application:</strong> your email address and the answers you give on the sign-up form</td><td data-label="Why">To review your application and tell you whether you were accepted</td><td data-label="Legal basis">Consent, given when you submit the form</td></tr>
+          <tr><td data-label="What"><strong>Account:</strong> your email address, and a record that you are on the approved list</td><td data-label="Why">To let you log in during the beta</td><td data-label="Legal basis">Performance of the beta agreement (Art. 6(1)(b))</td></tr>
+          <tr><td data-label="What"><strong>Login activity:</strong> when you last logged in and how many times</td><td data-label="Why">To see whether the beta is being used and to fix problems</td><td data-label="Legal basis">Legitimate interest in running and improving the beta (Art. 6(1)(f))</td></tr>
+          <tr><td data-label="What"><strong>Your food items:</strong> item name, category, where you store it, dates added and used, quantity, and price if you enter it</td><td data-label="Why">This is the core function of the app</td><td data-label="Legal basis">Performance of the beta agreement</td></tr>
+          <tr><td data-label="What"><strong>Your settings:</strong> alert email address, time zone, currency, country, and your email digest and alert preferences</td><td data-label="Why">To send you the emails you choose and show the right formats</td><td data-label="Legal basis">Performance of the beta agreement</td></tr>
+          <tr><td data-label="What"><strong>Receipt scans:</strong> the items you confirm on the review screen (name, category, storage location, dates, price), stored as your food items. A record of each scan attempt (date, success or failure, error code, item count, processing size, cost) is kept separately and does not include item names.</td><td data-label="Why">To turn a receipt into items, to enforce the monthly scan limit, and to understand what the feature costs to run</td><td data-label="Legal basis">Performance of the beta agreement (scanning) and legitimate interest (cost and error records)</td></tr>
+          <tr><td data-label="What"><strong>Feedback:</strong> if you use the in-app feedback link, your response and the email address it is linked to</td><td data-label="Why">To read and act on what you tell me about the beta</td><td data-label="Legal basis">Consent, given when you choose to open the feedback form and submit it</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Receipt images are not stored by FrigoTime.</strong> A photo is used only to extract the items and is not kept in my database. Receipts can contain personal details such as a name, a loyalty card number, or part of a card number. Please crop or avoid including these. The image is sent to Anthropic for reading (see section 3), and Anthropic deletes it within 30 days under its own terms.</p>
+      <p><strong>Incidental technical logging.</strong> When a receipt scan fails, a short fragment of the extracted text can appear in my hosting provider's error logs while I debug the failure. This never happens on a successful scan. If sending an alert email fails, the attempt is logged with your email address and the number of items in that alert. These are automatic error records, not something I read routinely, and they follow the retention periods in section 5.</p>
+      <p>I do not make decisions about you by automated means. I approve or decline applications myself, by hand.</p>
+      <p>The app uses only what it needs to keep you logged in. No advertising or analytics tools.</p>
+      <p><strong>Cookies.</strong> FrigoTime sets two cookies, both required to keep you signed in:</p>
+      <table>
+        <thead><tr><th>Cookie</th><th>Stores</th><th>Lifetime</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Cookie">Login session</td><td data-label="Stores">Your access token and basic account info, including your email</td><td data-label="Lifetime">Up to 400 days</td></tr>
+          <tr><td data-label="Cookie">Sign-in code verifier</td><td data-label="Stores">A one-time code used only during login</td><td data-label="Lifetime">Deleted after login completes</td></tr>
+        </tbody>
+      </table>
+      <p>These are strictly necessary for the app to work, so no cookie consent banner is required for them under EU rules.</p>
+    </section>
+
+    <section>
+      <h2>3. Who else handles your data</h2>
+      <p>I use these providers to run the beta. They act on my instructions.</p>
+      <table>
+        <thead><tr><th>Provider</th><th>What they do</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Provider"><strong>Tally</strong></td><td data-label="What they do">Hosts the beta sign-up form and stores applications. Also hosts the in-app feedback form, which links your feedback to the email address you signed up with.</td><td data-label="Where">EU servers</td></tr>
+          <tr><td data-label="Provider"><strong>Supabase</strong></td><td data-label="What they do">Hosts the app database and login. Your data is stored on servers in Ireland, but the company itself, Supabase Pte. Ltd., is registered in Singapore.</td><td data-label="Where">Ireland (storage), Singapore (company)</td></tr>
+          <tr><td data-label="Provider"><strong>Vercel</strong></td><td data-label="What they do">Hosts the app itself. Every request to FrigoTime passes through Vercel's infrastructure, including brief error logs (see "Incidental technical logging" above).</td><td data-label="Where">United States (account and control data); functions may run in other regions</td></tr>
+          <tr><td data-label="Provider"><strong>Anthropic</strong> (Claude API)</td><td data-label="What they do">Reads receipt scans and turns them into items. Anthropic does not train its models on API data by default.</td><td data-label="Where">United States</td></tr>
+          <tr><td data-label="Provider"><strong>Resend</strong></td><td data-label="What they do">Sends login codes and email alerts, which include the food item names and days remaining relevant to that alert. Resend keeps a copy of sent emails for up to 30 days.</td><td data-label="Where">United States</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>4. Transfers outside the EU</h2>
+      <p>Anthropic and Resend process data in the United States, Vercel's account and control-plane data is handled in the United States, and Supabase's contracting entity is in Singapore. Anthropic, Resend, and Supabase have signed data processing terms with me covering these transfers, using the EU Standard Contractual Clauses. Resend is also certified under the EU-U.S. Data Privacy Framework. Vercel hosts the app under its standard terms; Vercel's formal data processing addendum is available only on paid plans, which this beta does not currently use. Tally keeps data in the EU.</p>
+    </section>
+
+    <section>
+      <h2>5. How long I keep it</h2>
+      <ul>
+        <li><strong>Declined or unanswered applications:</strong> deleted 30 days after I answer.</li>
+        <li><strong>Accounts and food data:</strong> kept while you are actively using the app. If you leave the beta, or if your account has no login for 90 days, I treat that as you having stopped, and delete your account and food data 90 days after that point.</li>
+        <li><strong>Scan and login records:</strong> kept on the same schedule as your account. Once deleted, I may keep an anonymized, aggregate summary that cannot be traced back to you, for example a general pattern across all testers.</li>
+        <li><strong>Feedback:</strong> kept in Tally for 90 days.</li>
+        <li><strong>Hosting error logs (Vercel):</strong> kept for roughly 1 hour, then gone.</li>
+        <li><strong>Email provider logs:</strong> Resend keeps email logs for up to 30 days.</li>
+        <li><strong>Anthropic:</strong> deletes receipt scan inputs and outputs within 30 days, unless flagged for misuse, in which case it can be kept up to 2 years.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Your rights</h2>
+      <p>You can ask me at any time to: see the data I hold about you, correct it, delete it, restrict how I use it, export it, or object to a use based on legitimate interest. If you gave consent, you can withdraw it at any time, which does not affect what happened before. Email <a href="mailto:frigotimeapp@gmail.com">frigotimeapp@gmail.com</a>. I will answer within one month.</p>
+      <p>You can also complain to the Czech data protection authority, the Úřad pro ochranu osobních údajů (<a href="https://uoou.gov.cz">uoou.gov.cz</a>), or to the authority in the country where you live.</p>
+    </section>
+
+    <section>
+      <h2>7. Security</h2>
+      <p>Your data is stored in access-controlled databases, and logins use a one-time code sent by email. No system is perfectly secure. If a breach puts your data at risk, I will tell you.</p>
+    </section>
+
+    <section>
+      <h2>8. Changes</h2>
+      <p>If I change how I handle data, I will update this page and change the date at the top. For anything significant I will email active testers.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-tag">Track freshness. Waste less.</span>
+    <span class="footer-meta"><a href="../">FrigoTime beta</a> · Privacy notice</span>
+    <span class="footer-copy">© 2026 FrigoTime. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

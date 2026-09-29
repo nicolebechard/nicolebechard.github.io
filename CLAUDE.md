@@ -44,13 +44,14 @@ Each page is a self-contained HTML file with all CSS embedded in `<style>` tags.
 
 A side project hosted on this site but **separate from the portfolio**: its own branding, not linked from portfolio pages. A future "Side Projects" section may link to it. The site's live domain is `nicolebechard.com` (see `CNAME`); absolute URLs in meta tags use it.
 
-**Pages (both live, launched September 2026):**
+**Pages (all live, launched September 2026):**
 - `frigotime/index.html` → `nicolebechard.com/frigotime/`: beta tester landing page. Built from a Claude Design handoff ("FrigoTime Beta Testing Brief").
 - `frigotime/privacy/index.html` → `nicolebechard.com/frigotime/privacy/`: beta privacy notice. Text is Nicole's own, reproduced verbatim; do not edit wording without her. Written in first person ("I"), unlike the beta page ("we"), because Nicole is the individual data controller.
+- `frigotime/help/index.html` → `nicolebechard.com/frigotime/help/`: help page for active testers, linked from the app menu. Text is Nicole's draft, reproduced verbatim apart from agreed fixes. Each section has an anchor the app can deep-link to: `#welcome`, `#getting-in`, `#adding-groceries`, `#reviewing-items`, `#freshness`, `#used-or-wasted`, `#progress`, `#alerts`, `#settings`, `#limits`, `#known-gaps`, `#privacy-and-feedback`, `#troubleshooting`. Do not rename them. Help content must match how the app actually behaves, and its data statements must stay consistent with the privacy notice.
 
-**Do not move or rename anything in `frigotime/`.** The URLs are in testers' inboxes and chats, the privacy URL is linked from the Tally form, and `frigotime/logo-wide.png` is loaded by URL in the FrigoTime Gmail signature.
+**Do not move or rename anything in `frigotime/`.** The URLs are in testers' inboxes and chats, the privacy URL is linked from the Tally form, the help URL and its anchors are linked from the app menu, and `frigotime/logo-wide.png` is loaded by URL in the FrigoTime Gmail signature.
 
-**Link-only by design:** both pages have `<meta name="robots" content="noindex, nofollow">`, are not in `sitemap.xml`, and are not linked from portfolio pages. Keep it that way unless Nicole decides otherwise.
+**Link-only by design:** all FrigoTime pages have `<meta name="robots" content="noindex, nofollow">`, are not in `sitemap.xml`, and are not linked from portfolio pages. Keep it that way unless Nicole decides otherwise.
 
 **External connections:**
 - All "Sign up" buttons (marked `data-signup`) → Tally form `https://tally.so/r/kdqD8r`. The form has its own cover image, thank-you page, and a link to the privacy notice.

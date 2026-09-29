@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help | FrigoTime beta</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Help for FrigoTime beta testers: signing in, adding groceries, freshness estimates, alerts, progress, settings, and troubleshooting.">
+<meta property="og:title" content="FrigoTime Help">
+<meta property="og:description" content="Help for FrigoTime beta testers: signing in, adding groceries, freshness estimates, alerts, progress, settings, and troubleshooting.">
+<meta property="og:image" content="https://nicolebechard.com/frigotime/og-image.png">
+<meta property="og:url" content="https://nicolebechard.com/frigotime/help/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="../logo.png">
+<link rel="apple-touch-icon" href="../logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* FrigoTime design system tokens (same as ../index.html) */
+  :root {
+    --ft-brand: #8dc63f;
+    --ft-accent: #fbb040;
+    --ft-deep-orange: #f7901e;
+    --ft-ink: #58595b;
+    --ft-bg: #ffffff;
+    --ft-bg-page: #f9fafb;
+    --ft-border: #e5e7eb;
+    --ft-border-soft: #f3f4f6;
+    --ft-ink-70: color-mix(in srgb, var(--ft-ink) 70%, transparent);
+    --ft-ink-50: color-mix(in srgb, var(--ft-ink) 50%, transparent);
+    --ft-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --ft-font-cta: 'Fredoka', 'Inter', system-ui, sans-serif;
+    --ft-text-xs: 12px;
+    --ft-text-sm: 14px;
+    --ft-text-xl: 20px;
+    --ft-radius-md: 12px;
+    --ft-radius-lg: 16px;
+    --ft-radius-pill: 9999px;
+    --ft-transition-colors: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    --wash-green: color-mix(in srgb, var(--ft-brand) 12%, white);
+    --wash-green-hero: color-mix(in srgb, var(--ft-brand) 14%, white);
+    --rule-green: color-mix(in srgb, var(--ft-brand) 30%, white);
+    --btn-soft: color-mix(in srgb, var(--ft-accent) 25%, white);
+    --btn-soft-hover: color-mix(in srgb, var(--ft-accent) 40%, white);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--ft-font-sans);
+    color: var(--ft-ink);
+    background: var(--ft-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: color-mix(in srgb, var(--ft-brand) 55%, var(--ft-ink)); text-underline-offset: 2px; }
+  a:hover { color: var(--ft-ink); }
+  h1, h2, h3, p { margin: 0; }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  /* Keep anchored headings clear of the sticky nav */
+  [id] { scroll-margin-top: 70px; }
+
+  /* NAV (matches the beta page) */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 2px solid color-mix(in srgb, var(--ft-brand) 40%, white);
+    padding: 10px 20px;
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-brand img { height: 32px; width: auto; display: block; }
+  .beta-pill {
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+    color: var(--ft-deep-orange);
+    background: color-mix(in srgb, var(--ft-accent) 20%, white);
+    border-radius: var(--ft-radius-pill);
+    padding: 3px 9px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 36px; padding: 8px 14px; white-space: nowrap;
+    font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-sm);
+    border-radius: var(--ft-radius-md);
+    background: var(--btn-soft); color: var(--ft-ink); text-decoration: none;
+    transition: var(--ft-transition-colors);
+  }
+  .btn:hover { background: var(--btn-soft-hover); color: var(--ft-ink); }
+
+  /* HERO: logo + title + topic index */
+  .hero { background: var(--wash-green-hero); border-bottom: 1px solid var(--rule-green); padding: 36px 20px 32px; }
+  .hero .wrap { display: flex; flex-direction: column; gap: 22px; }
+  .hero-title { display: flex; align-items: center; gap: 16px; }
+  .hero-title img { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+  h1 {
+    font-family: var(--ft-font-cta); font-weight: 500;
+    font-size: clamp(28px, 5vw, 38px); line-height: 1.15; letter-spacing: -0.02em;
+  }
+  .topics-label { font-family: var(--ft-font-cta); font-weight: 600; font-size: var(--ft-text-xs); letter-spacing: 0.05em; color: var(--ft-ink-70); margin-bottom: 10px; }
+  .topics { display: flex; flex-wrap: wrap; gap: 8px; }
+  .topics a {
+    display: inline-flex; align-items: center; min-height: 36px;
+    background: var(--ft-bg); color: var(--ft-ink); text-decoration: none;
+    font-size: var(--ft-text-sm); font-weight: 500;
+    border-radius: var(--ft-radius-md); padding: 7px 12px;
+    transition: var(--ft-transition-colors);
+  }
+  .topics a:hover { background: color-mix(in srgb, var(--ft-brand) 25%, white); color: var(--ft-ink); }
+
+  /* SECTIONS: heading rail on the left, Q&A on the right (like the beta page brief) */
+  .help-section { padding: 0 20px; }
+  .help-section.intro-band { background: var(--wash-green); border-bottom: 1px solid var(--rule-green); }
+  .section-row { display: flex; flex-wrap: wrap; gap: 16px 32px; padding: 32px 0; }
+  .help-section + .help-section .section-row { border-top: 1px solid var(--ft-border); }
+  .help-section.intro-band + .help-section .section-row { border-top: 0; }
+  h2 {
+    flex: 0 0 200px;
+    font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-xl); line-height: 1.3;
+  }
+  .section-body { flex: 1 1 320px; display: flex; flex-direction: column; gap: 22px; max-width: 680px; }
+  .qa { display: flex; flex-direction: column; gap: 8px; }
+  h3 { font-size: 16px; font-weight: 600; line-height: 1.4; }
+  .qa p, .qa li { font-size: 16px; line-height: 1.65; text-wrap: pretty; }
+  .qa p + p, .qa ul + p, .qa p + ul { margin-top: 4px; }
+  ul { margin: 0; padding-left: 20px; }
+  li + li { margin-top: 4px; }
+  strong { font-weight: 600; }
+  .to-top { align-self: flex-start; font-size: var(--ft-text-xs); color: var(--ft-ink-50); text-decoration: none; }
+  .to-top:hover { color: var(--ft-ink); }
+  .intro-band .to-top { display: none; }
+
+  /* CONTACT BAND (matches the beta page's green sign-up section) */
+  .contact { background: var(--ft-brand); padding: 40px 20px; }
+  .contact-card {
+    background: var(--ft-bg); border-radius: var(--ft-radius-lg); padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between;
+  }
+  .contact-card h2 { flex: none; font-size: 22px; }
+  .contact-card .btn { min-height: 44px; font-size: 16px; padding: 12px 20px; }
+
+  /* FOOTER (matches the beta page) */
+  footer { padding: 24px 20px 40px; background: var(--ft-border-soft); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+  .footer-tag { font-family: var(--ft-font-cta); font-weight: 500; font-size: var(--ft-text-sm); }
+  .footer-meta { font-size: var(--ft-text-xs); }
+  .footer-meta a { color: inherit; }
+  .footer-copy { font-size: var(--ft-text-xs); color: var(--ft-ink-50); }
+</style>
+</head>
+<body id="top">
+
+<nav>
+  <div class="wrap">
+    <a class="nav-brand" href="../">
+      <img src="../logo-wide.png" alt="FrigoTime">
+      <span class="beta-pill">Beta</span>
+    </a>
+    <a class="btn" href="mailto:frigotimeapp@gmail.com">Contact us</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-title">
+      <img src="../logo.png" alt="">
+      <h1>FrigoTime Help</h1>
+    </div>
+    <div>
+      <p class="topics-label">Jump to a topic</p>
+      <div class="topics">
+        <a href="#welcome">Welcome</a>
+        <a href="#getting-in">Getting in</a>
+        <a href="#adding-groceries">Adding groceries</a>
+        <a href="#reviewing-items">Editing items</a>
+        <a href="#freshness">Freshness</a>
+        <a href="#used-or-wasted">Used or wasted</a>
+        <a href="#progress">Progress</a>
+        <a href="#alerts">Alerts</a>
+        <a href="#settings">Your settings</a>
+        <a href="#limits">Scan limits</a>
+        <a href="#known-gaps">Known gaps</a>
+        <a href="#privacy-and-feedback">Data &amp; feedback</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="help-section intro-band" id="welcome">
+    <div class="wrap section-row">
+      <h2>Welcome to FrigoTime</h2>
+      <div class="section-body">
+        <div class="qa"><h3>What FrigoTime is and isn't</h3><p>FrigoTime is for busy home cooks who want to reduce food waste in their household. It tracks fresh groceries and tells you what to use first. No manual logging of every meal, no extensive kitchen inventory, just visibility into what needs using.</p><p>It is focused on perishables and fresh ingredients. It does not manage pantries, canned goods, or things that last months. It only asks about things that spoil.</p><p>As a beta tester, we ask that you add at least 5 items every week for 4 weeks. Your real data helps us see whether FrigoTime actually reduces food waste.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="getting-in">
+    <div class="wrap section-row">
+      <h2>Getting in</h2>
+      <div class="section-body">
+        <div class="qa"><h3>I didn't receive the sign-in email</h3><p>Check your spam folder first, then wait a few minutes. Email delivery can take a moment.</p><p>If you still don't see it, go back to the sign-in screen and enter your email again. We'll send a new one.</p></div>
+        <div class="qa"><h3>I'm on a different device than the one I signed up on</h3><p>No problem. When you open the sign-in email on a different phone or browser, the link may not work because it is tied to the browser you used to sign up. Instead, look for the 6-digit code in the email and enter it on the sign-in screen. The code works on any device.</p></div>
+        <div class="qa"><h3>Returning users get a different email</h3><p>The first time you sign up, you receive a "Welcome to the FrigoTime beta" email with a link and 6-digit code. When you come back later, you get a "Magic link" email with the same link and code options if you're not already signed in.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="adding-groceries">
+    <div class="wrap section-row">
+      <h2>Adding groceries</h2>
+      <div class="section-body">
+        <div class="qa"><h3>Scan a receipt</h3><p>Take a photo of your receipt or upload one from your phone. FrigoTime reads it, extracts the items and estimates how long each will stay fresh.</p><p>For best results, use a direct screenshot or clear photo rather than a blurry image. The app will tell you if a photo is too unclear to read.</p></div>
+        <div class="qa"><h3>Type a list instead</h3><p>Can't find a receipt? Type the items, one per line. Any language works, and FrigoTime will translate and match them automatically. You can type up to 40 items at a time.</p></div>
+        <div class="qa"><h3>My receipt is really long</h3><p>Split it in two. Take a photo of the top half, upload it, then come back and upload the bottom half. FrigoTime will add all the items to your list.</p></div>
+        <div class="qa"><h3>Can I add shelf-stable items?</h3><p>When you scan a receipt, items like olive oil, pasta, or canned tomatoes show up greyed out because they last so long that freshness tracking is not useful. If you want to track one anyway, tap "+ Track" next to it and FrigoTime will add it.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="reviewing-items">
+    <div class="wrap section-row">
+      <h2>Reviewing and adjusting items</h2>
+      <div class="section-body">
+        <div class="qa"><h3>"Please verify" items</h3><p>FrigoTime matches your items to real foods and it calculates a confidence score for each match. For lower confidence matches, you'll see a verification prompt next to the item. Most of the time it is right, but check the name and change it if needed before confirming.</p></div>
+        <div class="qa"><h3>Renaming, storing, and editing</h3><p>On the home screen, tap Menu (three lines) and then "Edit items" to rename, change the storage location (Fridge / Freezer / Pantry / Counter), or adjust how many days an item has left.</p><p>Changes save when you tap "Confirm changes".</p><p>To delete an item, tap the × icon and confirm again (tap × twice).</p></div>
+        <div class="qa"><h3>Storage locations and freshness</h3><p>The storage location matters because food lasts different lengths of time in different places. A tomato on the counter lasts 3-5 days, but 5-7 days in the fridge. If you move something to a different spot, edit it and update the storage location so the freshness estimate stays accurate.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="freshness">
+    <div class="wrap section-row">
+      <h2>How freshness is estimated</h2>
+      <div class="section-body">
+        <div class="qa"><h3>Where the numbers come from</h3><p>FrigoTime uses shelf-life data from freshness authorities like USDA FoodKeeper to estimate how many days each food will stay fresh. Every item is looked up and given an estimate based on where you store it. You can always adjust the number if you think our estimate is off.</p><p>If an item is not recognized, FrigoTime gives it a default of 5 days (a conservative estimate for perishables).</p></div>
+        <div class="qa"><h3>Freshness tolerance: Careful, Balanced, Extended</h3><p>This is your risk tolerance. It sets where on the freshness estimate range you're comfortable with.</p><ul><li><strong>Careful:</strong> shorter estimates, alerts come sooner. Choose this if you prefer to use things early.</li><li><strong>Balanced:</strong> the middle ground. Good for most households.</li><li><strong>Extended:</strong> longer estimates, fewer alerts. Choose this if you are comfortable letting things sit a bit longer.</li></ul><p>You can change this anytime in Settings. New items and items you have already added will use the new setting.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="used-or-wasted">
+    <div class="wrap section-row">
+      <h2>Marking items used or wasted</h2>
+      <div class="section-body">
+        <div class="qa"><h3>Mark as used</h3><p>Tap "Used ✓" on the home screen when you eat something, cook with it, or use it for anything.</p><p>Then choose how much is left: "Mostly here", "About half", "Almost gone", or "All gone ✓". The app will track the amount you used.</p><p>If you choose "All gone ✓", the item disappears from your list immediately. Otherwise it stays on your list with the amount you have left.</p></div>
+        <div class="qa"><h3>Items that expired</h3><p>If an item passes its freshness window without being marked used, it moves to the "Did you use these?" section at the bottom of your home screen. Answer honestly: did you use any of it before it went bad?</p><ul><li>Tap "Yes ✓" and then choose how much you used: "Some", "Half", "Most", or "All". The app counts this as food saved, even though it was past its date.</li><li>Tap "No" if you did not use it. FrigoTime will record it as wasted.</li></ul><p>If you do not answer, the item stays in this section for 7 days, then is automatically archived. You can still mark it used or wasted anytime during those 7 days.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="progress">
+    <div class="wrap section-row">
+      <h2>Progress and statistics</h2>
+      <div class="section-body">
+        <div class="qa"><h3>What the percentage means</h3><p>The percentage shows how much of your food you actually used, including partial amounts. If you used all of one item and half of another, and wasted half of a third item, your utilization is about 75%.</p><p>Exact quantities and weights of items aren't tracked in FrigoTime. Each item counts equally and partial use counts toward your savings.</p></div>
+        <div class="qa"><h3>Week / Month / All time</h3><p>Tap the tabs to see your usage for this week, this month, or since you started. Each tab shows:</p><ul><li>Your usage percentage (how much you used vs wasted)</li><li>Change from the previous week or month (arrows show up or down)</li><li>A trend chart showing used vs wasted over time</li><li>A category breakdown if you have enough data</li><li>Money saved and wasted (if your receipts included prices)</li></ul></div>
+        <div class="qa"><h3>Baseline and benchmarks</h3><p>Your first two weeks are a learning period. Starting from week 3, if you have added at least 10 items total, used at least 5 of them, and it has been at least 14 days, your Progress page will show a baseline: "When you started, you were using X% of your groceries." This is your starting point to compare against.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="alerts">
+    <div class="wrap section-row">
+      <h2>Alerts and notifications</h2>
+      <div class="section-body">
+        <div class="qa"><h3>Scheduled digest</h3><p>A regular summary of your items according to what you should use in the next two weeks. It arrives on the days and times you choose. You can change the frequency (every 1 to 14 days) and the time in Settings.</p></div>
+        <div class="qa"><h3>Expiry alert</h3><p>A heads-up for items about to go bad. It tells you what needs attention soon. You choose how many days before expiry to get the alert (1 to 7 days) and what time of day. By default, you get one expiry alert per day per household.</p></div>
+        <div class="qa"><h3>Turn alerts on or off</h3><p>Go to Settings (the gear icon in the menu) and toggle "Scheduled digest" and "Expiry alert" on or off. You can also change the send times and frequency.</p></div>
+        <div class="qa"><h3>Alert email address</h3><p>Alerts go to the email you set in Settings. The default is your login email, but you can change it to any email address. This is useful if you share the app with a household and want alerts to go to different people.</p></div>
+        <div class="qa"><h3>I did not get an alert email</h3><p>Check your spam folder first. If it is not there, make sure you did not accidentally block the sender. The email might also have been delayed in delivery.</p><p>If you keep not receiving emails, use the "Send feedback" option in the app menu to let us know. Include whether the email went to spam or disappeared.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="settings">
+    <div class="wrap section-row">
+      <h2>Your settings</h2>
+      <div class="section-body">
+        <div class="qa"><p>You can change these anytime in the Settings menu (the gear icon):</p><ul><li><strong>Freshness tolerance:</strong> Careful, Balanced, or Extended. A change applies to all your items, new and existing.</li><li><strong>Scheduled digest:</strong> on/off, frequency (1-14 days), time</li><li><strong>Expiry alert:</strong> on/off, threshold (1-7 days before expiry), time</li><li><strong>Alert email:</strong> which email should get your alerts</li><li><strong>Timezone:</strong> used for alert times. Auto-detected, but you can override it.</li><li><strong>Currency:</strong> used to show money saved and wasted. Auto-detected based on your timezone and language, but you can change it.</li></ul><p>Defaults when you first sign up:</p><ul><li>Tolerance: Balanced</li><li>Digest: on, every 2 days at 16:30 (4:30 PM)</li><li>Expiry alert: on, at 1 day remaining, at 08:00 (8:00 AM)</li><li>Alert email: your login email</li><li>Timezone: auto-detected</li><li>Currency: auto-detected</li></ul></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="limits">
+    <div class="wrap section-row">
+      <h2>How many items can I add?</h2>
+      <div class="section-body">
+        <div class="qa"><h3>Receipt scans</h3><p>You get 20 receipt scans per month, per household, starting on the 1st. This includes scans that did not work, so failed scans count toward your limit. After you hit 20, you can still add items by typing them in (typing lists are not limited).</p></div>
+        <div class="qa"><h3>Failed scans and lockouts</h3><p>If 3 scans in a row fail (did not read the receipt), scanning is paused for about 1 hour. You can still add items by typing. After an hour, you will be able to scan again (but the monthly cap still applies).</p></div>
+        <div class="qa"><h3>Typed lists</h3><p>Type as many lists as you want. Each list can have up to 40 items.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="known-gaps">
+    <div class="wrap section-row">
+      <h2>Limitations and known gaps</h2>
+      <div class="section-body">
+        <div class="qa"><ul><li>Receipt scans are limited to 20 per month to keep costs down. Typed lists are unlimited.</li><li>Failed scans count toward your monthly limit.</li><li>3 failed scans in a row pause scanning for 1 hour.</li><li>Shelf-stable items are not tracked by default. Tap "+ Track" if you want to add one.</li><li>Unrecognized items fall back to 5 days by default (a conservative estimate).</li><li>Receipts are not stored. Only the extracted items are kept.</li><li>One account per email address.</li><li>There is no way to log out yet. Close your browser or clear your app data on your phone if needed.</li></ul></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="privacy-and-feedback">
+    <div class="wrap section-row">
+      <h2>Data, privacy, and feedback</h2>
+      <div class="section-body">
+        <div class="qa"><h3>How to send feedback</h3><p>Tap Menu (three lines) on the home screen, then "Send feedback". A form opens with your email already filled in. Tell us what is working and what is not.</p></div>
+        <div class="qa"><h3>Who do I contact for help?</h3><p>Email <a href="mailto:frigotimeapp@gmail.com">frigotimeapp@gmail.com</a>. We will get back to you as soon as we can.</p></div>
+        <div class="qa"><h3>Can you delete my data?</h3><p>Yes. Email <a href="mailto:frigotimeapp@gmail.com">frigotimeapp@gmail.com</a> with your request and include the email address of your account. We will delete your account and all your data.</p></div>
+        <div class="qa"><h3>What data do you collect?</h3><p>Read our privacy notice at <a href="../privacy/">nicolebechard.com/frigotime/privacy</a>. It explains what we collect, how long we keep it, and who can see it.</p></div>
+        <div class="qa"><h3>Is my data shared?</h3><p>Your items and preferences are private to you. We do not sell your data or share it for advertising. A few service providers process it so the app can run; they are listed in our <a href="../privacy/">privacy notice</a>.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="help-section" id="troubleshooting">
+    <div class="wrap section-row">
+      <h2>Troubleshooting</h2>
+      <div class="section-body">
+        <div class="qa"><h3>The app feels slow</h3><p>Try refreshing the page. If you are on mobile, close and reopen the browser.</p></div>
+        <div class="qa"><h3>Items are not showing up after I added them</h3><p>Refresh the page. If they still do not appear, check your internet connection and try again.</p></div>
+        <div class="qa"><h3>An item disappeared from my list</h3><p>It was probably marked as used. Check the "Did you use these?" section at the bottom of your home screen. If the item has passed its freshness window, it will be there.</p></div>
+        <div class="qa"><h3>I want to track pantry items</h3><p>Shelf-stable items like pasta and canned goods do not show their freshness by default. You can add them by tapping "+ Track" when you scan or type a list, and they will be tracked like any other item. Keep in mind that FrigoTime estimates are designed for perishables, so the dates may not be accurate for shelf-stable foods.</p></div>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact">
+  <div class="wrap contact-card">
+    <h2>Still stuck?</h2>
+    <a class="btn" href="mailto:frigotimeapp@gmail.com">Email frigotimeapp@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-tag">Track freshness. Waste less.</span>
+    <span class="footer-meta"><a href="../">FrigoTime beta</a> · Help · <a href="../privacy/">Privacy notice</a></span>
+    <span class="footer-copy">© 2026 FrigoTime. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
